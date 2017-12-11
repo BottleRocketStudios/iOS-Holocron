@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 s.name             = 'Holocron'
 s.version          = '0.1.0'
-s.summary          = 'A short description of Holocron.'
+s.summary          = 'A framework intended to make data peristence simpler'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,26 +18,16 @@ s.summary          = 'A short description of Holocron.'
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
 s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Holocron is a small, Swift framework intended to make data peristence simpler.
 DESC
 
-s.homepage         = 'https://github.com/wmcginty/Holocron'
-# s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-s.license          = { :type => 'MIT', :file => 'LICENSE' }
-s.author           = { 'wmcginty' => 'mcgintw@gmail.com' }
-s.source           = { :git => 'https://github.com/wmcginty/Holocron.git', :tag => s.version.to_s }
+s.homepage         = 'https://github.com/BottleRocketStudios/iOS-Holocron'
+s.license          = { :type => 'Apache', :file => 'LICENSE' }
+s.author           = { 'Bottle Rocket Studios' => 'will.mcginty@bottlerocketstudios.com' }
+s.source           = { :git => 'https://github.com/bottlerocketstudios/iOS-Holocron.git', :tag => s.version.to_s }
 
 s.ios.deployment_target = '8.0'
-
 s.source_files = 'Holocron/Classes/**/*'
-
-# s.resource_bundles = {
-#   'Holocron' => ['Holocron/Assets/*.png']
-# }
-
-# s.public_header_files = 'Pod/Classes/**/*.h'
-# s.frameworks = 'UIKit', 'MapKit'
 s.dependency 'Result'
 s.dependency 'KeychainAccess'
 end
-
