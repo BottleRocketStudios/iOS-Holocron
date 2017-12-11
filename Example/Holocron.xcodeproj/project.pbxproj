@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EF5419B1FDF2B8B002B0B25 /* DirectoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF541971FDF2B8B002B0B25 /* DirectoryTests.swift */; };
+		0EF5419C1FDF2B8B002B0B25 /* UserDefaultsPersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF541981FDF2B8B002B0B25 /* UserDefaultsPersistenceTests.swift */; };
+		0EF5419D1FDF2B8B002B0B25 /* FilePersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF541991FDF2B8B002B0B25 /* FilePersistenceTests.swift */; };
+		0EF5419E1FDF2B8B002B0B25 /* KeychainPersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5419A1FDF2B8B002B0B25 /* KeychainPersistenceTests.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		87A62E05773758B07F18A150 /* Pods_Holocron_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A87A9BE46C426BCB74F2D176 /* Pods_Holocron_Tests.framework */; };
 		EF126A66D6788154DBFA6227 /* Pods_Holocron_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 621CBDFA4CAF22F0CE983A0F /* Pods_Holocron_Example.framework */; };
 /* End PBXBuildFile section */
@@ -28,6 +31,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0EF5418B1FDF2B48002B0B25 /* NOTICE */ = {isa = PBXFileReference; lastKnownFileType = text; name = NOTICE; path = ../NOTICE; sourceTree = "<group>"; };
+		0EF5418C1FDF2B48002B0B25 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		0EF5418D1FDF2B48002B0B25 /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CONTRIBUTING.md; path = ../CONTRIBUTING.md; sourceTree = "<group>"; };
+		0EF5418E1FDF2B48002B0B25 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		0EF541971FDF2B8B002B0B25 /* DirectoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryTests.swift; sourceTree = "<group>"; };
+		0EF541981FDF2B8B002B0B25 /* UserDefaultsPersistenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsPersistenceTests.swift; sourceTree = "<group>"; };
+		0EF541991FDF2B8B002B0B25 /* FilePersistenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePersistenceTests.swift; sourceTree = "<group>"; };
+		0EF5419A1FDF2B8B002B0B25 /* KeychainPersistenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPersistenceTests.swift; sourceTree = "<group>"; };
 		25F3EFDCD49E5251CBECA100 /* Pods-Holocron_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Holocron_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Holocron_Example/Pods-Holocron_Example.release.xcconfig"; sourceTree = "<group>"; };
 		4B656C6B9CA9218FFEC16D11 /* Pods-Holocron_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Holocron_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Holocron_Tests/Pods-Holocron_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Holocron_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Holocron_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,12 +50,9 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* Holocron_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Holocron_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		621CBDFA4CAF22F0CE983A0F /* Pods_Holocron_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Holocron_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		72ECD2EA21912D638D45F9DC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		8184015804BC3F3F87672774 /* Pods-Holocron_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Holocron_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Holocron_Example/Pods-Holocron_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		81C402DA6053DC1B39A72F30 /* Holocron.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = Holocron.podspec; path = ../Holocron.podspec; sourceTree = "<group>"; };
-		8548A40D16597BC8FAF41AEE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		81C402DA6053DC1B39A72F30 /* Holocron.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Holocron.podspec; path = ../Holocron.podspec; sourceTree = "<group>"; };
 		A87A9BE46C426BCB74F2D176 /* Pods_Holocron_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Holocron_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B42C5D6CA600F0031D01C044 /* Pods-Holocron_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Holocron_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Holocron_Tests/Pods-Holocron_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,7 +134,10 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				0EF541971FDF2B8B002B0B25 /* DirectoryTests.swift */,
+				0EF541991FDF2B8B002B0B25 /* FilePersistenceTests.swift */,
+				0EF5419A1FDF2B8B002B0B25 /* KeychainPersistenceTests.swift */,
+				0EF541981FDF2B8B002B0B25 /* UserDefaultsPersistenceTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -144,8 +155,10 @@
 			isa = PBXGroup;
 			children = (
 				81C402DA6053DC1B39A72F30 /* Holocron.podspec */,
-				72ECD2EA21912D638D45F9DC /* README.md */,
-				8548A40D16597BC8FAF41AEE /* LICENSE */,
+				0EF5418D1FDF2B48002B0B25 /* CONTRIBUTING.md */,
+				0EF5418C1FDF2B48002B0B25 /* LICENSE */,
+				0EF5418B1FDF2B48002B0B25 /* NOTICE */,
+				0EF5418E1FDF2B48002B0B25 /* README.md */,
 			);
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
@@ -219,7 +232,7 @@
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 0920;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -353,10 +366,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Holocron_Example/Pods-Holocron_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Holocron/Holocron.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Holocron.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -379,7 +396,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				0EF5419C1FDF2B8B002B0B25 /* UserDefaultsPersistenceTests.swift in Sources */,
+				0EF5419E1FDF2B8B002B0B25 /* KeychainPersistenceTests.swift in Sources */,
+				0EF5419D1FDF2B8B002B0B25 /* FilePersistenceTests.swift in Sources */,
+				0EF5419B1FDF2B8B002B0B25 /* DirectoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +566,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4B656C6B9CA9218FFEC16D11 /* Pods-Holocron_Tests.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -558,8 +579,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Holocron_Example.app/Holocron_Example";
 			};
 			name = Debug;
 		};
@@ -567,6 +590,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B42C5D6CA600F0031D01C044 /* Pods-Holocron_Tests.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -577,6 +601,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Holocron_Example.app/Holocron_Example";
 			};
 			name = Release;
 		};

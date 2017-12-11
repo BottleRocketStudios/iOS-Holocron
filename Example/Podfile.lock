@@ -1,0 +1,22 @@
+PODS:
+  - Holocron (0.1.0):
+    - KeychainAccess
+    - Result
+  - KeychainAccess (3.1.0)
+  - Result (3.2.4)
+
+DEPENDENCIES:
+  - Holocron (from `../`)
+
+EXTERNAL SOURCES:
+  Holocron:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Holocron: e13cc3305458b9cb3e4a3bf117f893696dedf650
+  KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+
+PODFILE CHECKSUM: d0af18b7cd5d8b334138b7dcc5b8f2278b680c04
+
+COCOAPODS: 1.4.0.beta.2
