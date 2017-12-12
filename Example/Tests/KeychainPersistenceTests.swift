@@ -26,7 +26,7 @@ class KeychainPersistenceTests: XCTestCase {
             case .success(let object):
                 XCTAssert(object == "Write This String", "Failed to write string")
             case .failure(let error):
-                XCTAssert(false, "Failed to write string: \(error)")
+                XCTFail("Failed to write string: \(error)")
             }
             textExpectation.fulfill()
         }
@@ -41,7 +41,7 @@ class KeychainPersistenceTests: XCTestCase {
             case .success(let object):
                 XCTAssert(object == 12345, "Failed to write Int")
             case .failure(let error):
-                XCTAssert(false, "Failed to write Int: \(error)")
+                XCTFail("Failed to write Int: \(error)")
             }
             textExpectation.fulfill()
         }
@@ -56,7 +56,7 @@ class KeychainPersistenceTests: XCTestCase {
             case .success(let object):
                 XCTAssert(object == true, "Failed to write Bool")
             case .failure(let error):
-                XCTAssert(false, "Failed to write Bool: \(error)")
+                XCTFail("Failed to write Bool: \(error)")
             }
             textExpectation.fulfill()
         }
@@ -71,7 +71,7 @@ class KeychainPersistenceTests: XCTestCase {
             case .success(let object):
                 XCTAssert(object == 12345.0, "Failed to write Double")
             case .failure(let error):
-                XCTAssert(false, "Failed to write double: \(error)")
+                XCTFail("Failed to write double: \(error)")
             }
             textExpectation.fulfill()
         }
@@ -86,7 +86,7 @@ class KeychainPersistenceTests: XCTestCase {
             case .success(let object):
                 XCTAssert(object == 12345.0, "Failed to write float")
             case .failure(let error):
-                XCTAssert(false, "Failed to write float: \(error)")
+                XCTFail("Failed to write float: \(error)")
             }
             textExpectation.fulfill()
         }
@@ -95,7 +95,7 @@ class KeychainPersistenceTests: XCTestCase {
     
     func testData() {
         guard let data = "Hello!".data(using: .utf8) else {
-            XCTAssert(false, "Failed to encode string to data")
+            XCTFail("Failed to encode string to data")
             return
         }
         let textExpectation = expectation(description: "testData")
@@ -105,7 +105,7 @@ class KeychainPersistenceTests: XCTestCase {
             case .success(let object):
                 XCTAssert(object == data, "Failed to write data")
             case .failure(let error):
-                XCTAssert(false, "Failed to write data: \(error)")
+                XCTFail("Failed to write data: \(error)")
             }
             textExpectation.fulfill()
         }
@@ -122,7 +122,7 @@ class KeychainPersistenceTests: XCTestCase {
             case .success(let object):
                 XCTAssert(object == "This is a test", "Failed to read string")
             case .failure(let error):
-                XCTAssert(false, "Failed to read string: \(error)")
+                XCTFail("Failed to read string: \(error)")
             }
             textExpectation.fulfill()
         }
@@ -139,7 +139,7 @@ class KeychainPersistenceTests: XCTestCase {
             case .success(let object):
                 XCTAssert(object == true, "Failed to remove string")
             case .failure(let error):
-                XCTAssert(false, "Failed to remove string: \(error)")
+                XCTFail("Failed to remove string: \(error)")
             }
             testExpectation.fulfill()
         }

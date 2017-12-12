@@ -32,7 +32,7 @@ class DirectoryTests: XCTestCase {
         filePersistance.retrieve(object: store) { (result: Result<String, StorageError>) in
             switch result {
             case .success(_):
-                XCTAssert(false, "File exists")
+                XCTFail("File exists")
             case .failure(_):
                 textExpectation.fulfill()
             }
@@ -52,7 +52,7 @@ class DirectoryTests: XCTestCase {
             case .success(let object):
                 XCTAssert(object == "This is a test read", "Failed to read string")
             case .failure(let error):
-                XCTAssert(false, "Failed to read string: \(error)")
+                XCTFail("Failed to read string: \(error)")
             }
             textExpectation.fulfill()
         }
@@ -75,7 +75,7 @@ class DirectoryTests: XCTestCase {
             case .success(let object):
                 XCTAssert(object == "This is a test read B", "Failed to read string")
             case .failure(let error):
-                XCTAssert(false, "Failed to read string: \(error)")
+                XCTFail("Failed to read string: \(error)")
             }
             textExpectation.fulfill()
         }
@@ -98,10 +98,10 @@ class DirectoryTests: XCTestCase {
                 let url = FileManager.documentsDirectoryURL.appendingPathComponent(fileStore.fileName)
                 let fileManager = FileManager()
                 if fileManager.contents(atPath: url.path) != nil {
-                    XCTAssert(false, "Failed to write string")
+                    XCTFail("Failed to write string")
                 }
             case .failure(let error):
-                XCTAssert(false, "Failed to write string: \(error)")
+                XCTFail("Failed to write string: \(error)")
             }
             textExpectation.fulfill()
         }
@@ -132,10 +132,10 @@ class DirectoryTests: XCTestCase {
                 let url = FileManager.documentsDirectoryURL.appendingPathComponent(fileStore.fileName)
                 let fileManager = FileManager()
                 if fileManager.contents(atPath: url.path) != nil {
-                    XCTAssert(false, "Failed to write string")
+                    XCTFail("Failed to write string")
                 }
             case .failure(let error):
-                XCTAssert(false, "Failed to write string: \(error)")
+                XCTFail("Failed to write string: \(error)")
             }
             urls = try? fileManager.contentsOfDirectory(at: self.cacheDirectory, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
             XCTAssert(urls?.count == 2, "Directory should have two files")
@@ -157,10 +157,10 @@ class DirectoryTests: XCTestCase {
                 let url = FileManager.documentsDirectoryURL.appendingPathComponent(fileStore.fileName)
                 let fileManager = FileManager()
                 if fileManager.contents(atPath: url.path) != nil {
-                    XCTAssert(false, "Failed to write string")
+                    XCTFail("Failed to write string")
                 }
             case .failure(let error):
-                XCTAssert(false, "Failed to write string: \(error)")
+                XCTFail("Failed to write string: \(error)")
             }
             let fileManager = FileManager()
             let urls = try? fileManager.contentsOfDirectory(at: self.cacheDirectory.appendingPathComponent("A/B/C/D/"), includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
@@ -201,7 +201,7 @@ class DirectoryTests: XCTestCase {
             case .success(let object):
                 XCTAssert(object, "Failed to remove string")
             case .failure(let error):
-                XCTAssert(false, "Failed to remove string: \(error)")
+                XCTFail("Failed to remove string: \(error)")
             }
             let fileManager = FileManager()
             let urls = try? fileManager.contentsOfDirectory(at: self.cacheDirectory, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)

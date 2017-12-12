@@ -34,7 +34,7 @@ class FilePersistenceTests: XCTestCase {
             case .success(let object):
                 XCTAssert(object == "Write This String", "Failed to write string")                
             case .failure(let error):
-                XCTAssert(false, "Failed to write string: \(error)")
+                XCTFail("Failed to write string: \(error)")
             }
             textExpectation.fulfill()
         }
@@ -49,7 +49,7 @@ class FilePersistenceTests: XCTestCase {
             case .success(let object):
                 XCTAssert(object == 12345, "Failed to write int")
             case .failure(let error):
-                XCTAssert(false, "Failed to write int: \(error)")
+                XCTFail("Failed to write int: \(error)")
             }
             textExpectation.fulfill()
         }
@@ -64,7 +64,7 @@ class FilePersistenceTests: XCTestCase {
             case .success(let object):
                 XCTAssert(object == true, "Failed to write bool")
             case .failure(let error):
-                XCTAssert(false, "Failed to write bool: \(error)")
+                XCTFail("Failed to write bool: \(error)")
             }
             textExpectation.fulfill()
         }
@@ -80,7 +80,7 @@ class FilePersistenceTests: XCTestCase {
             case .success(let object):
                 XCTAssert(object == 12345.0, "Failed to write double")
             case .failure(let error):
-                XCTAssert(false, "Failed to write double: \(error)")
+                XCTFail("Failed to write double: \(error)")
             }
             textExpectation.fulfill()
         }
@@ -96,7 +96,7 @@ class FilePersistenceTests: XCTestCase {
             case .success(let object):
                 XCTAssert(object == 12345.0, "Failed to write float")
             case .failure(let error):
-                XCTAssert(false, "Failed to write float: \(error)")
+                XCTFail("Failed to write float: \(error)")
             }
             textExpectation.fulfill()
         }
@@ -126,7 +126,7 @@ class FilePersistenceTests: XCTestCase {
             case .success(let object):
                 XCTAssert(object == data, "Failed to write image")
             case .failure(let error):
-                XCTAssert(false, "Failed to write image: \(error)")
+                XCTFail("Failed to write image: \(error)")
             }
             textExpectation.fulfill()
         }
@@ -145,7 +145,7 @@ class FilePersistenceTests: XCTestCase {
             case .success(let object):
                 XCTAssert(object == "This is a test read", "Failed to read string")
             case .failure(let error):
-                XCTAssert(false, "Failed to read string: \(error)")
+                XCTFail("Failed to read string: \(error)")
             }
             textExpectation.fulfill()
         }
@@ -159,7 +159,7 @@ class FilePersistenceTests: XCTestCase {
         filePersistance.retrieve(object: store) { (result: Result<String, StorageError>) in
             switch result {
             case .success(let object):
-                XCTAssert(false, "Object unintended: \(object)")
+                XCTFail("Object unintended: \(object)")
             case .failure(let error):
                 XCTAssert(!error.localizedDescription.isEmpty, "No error: \(error)")
             }
@@ -180,10 +180,10 @@ class FilePersistenceTests: XCTestCase {
                 let url = FileManager.documentsDirectoryURL.appendingPathComponent(fileStore.fileName)
                 let fileManager = FileManager()
                 if fileManager.contents(atPath: url.path) != nil {
-                    XCTAssert(false, "Failed to write string")
+                    XCTFail("Failed to write string")
                 }
             case .failure(let error):
-                XCTAssert(false, "Failed to write string: \(error)")
+                XCTFail("Failed to write string: \(error)")
             }
             textExpectation.fulfill()
         }
@@ -196,7 +196,7 @@ class FilePersistenceTests: XCTestCase {
 //        filePersistance.write(object: ["test": Formatter()], for: fileStore) { (result) in
 //            switch result {
 //            case .success(let object):
-//                XCTAssert(false, "Object unintended: \(object)")
+//                XCTFail("Object unintended: \(object)")
 //            case .failure(let error):
 //                XCTAssert(!error.localizedDescription.isEmpty, "No error: \(error)")
 //            }
@@ -215,7 +215,7 @@ class FilePersistenceTests: XCTestCase {
             case .success(let object):
                 XCTAssert(object, "Failed to remove string")
             case .failure(let error):
-                XCTAssert(false, "Failed to remove string: \(error)")
+                XCTFail("Failed to remove string: \(error)")
             }
             textExpectation.fulfill()
         }
