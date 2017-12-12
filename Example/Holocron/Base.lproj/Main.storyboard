@@ -1,22 +1,172 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Holocron_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Defaults" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quG-0S-OnF">
+                                <rect key="frame" x="135.5" y="28" width="104" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type something you want to save" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ex0-3i-Nvf">
+                                <rect key="frame" x="16" y="65" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHW-6J-PvJ">
+                                <rect key="frame" x="16" y="103" width="35" height="30"/>
+                                <state key="normal" title="Read"/>
+                                <connections>
+                                    <action selector="userDefaultsReadTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="kB3-iS-GsE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulS-fq-Jb7">
+                                <rect key="frame" x="67" y="103" width="37" height="30"/>
+                                <state key="normal" title="Write"/>
+                                <connections>
+                                    <action selector="userDefaultsWriteTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="50p-W9-kl0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfx-7V-pNB">
+                                <rect key="frame" x="120" y="103" width="45" height="30"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="userDefaultsDeleteTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="p42-yD-c4v"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keychain" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Lk-xw-2CC">
+                                <rect key="frame" x="153" y="149" width="69" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type something you want to save" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kgs-1r-vM1">
+                                <rect key="frame" x="16" y="186" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTL-ya-E1j">
+                                <rect key="frame" x="16" y="224" width="35" height="30"/>
+                                <state key="normal" title="Read"/>
+                                <connections>
+                                    <action selector="keychainReadTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7Yy-Ua-KeS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nny-IL-VAM">
+                                <rect key="frame" x="67" y="224" width="37" height="30"/>
+                                <state key="normal" title="Write"/>
+                                <connections>
+                                    <action selector="keychainWriteTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4f3-gX-eGc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqp-Ct-dLh">
+                                <rect key="frame" x="120" y="224" width="45" height="30"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="keychainDeleteTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6C0-Ms-DZz"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="File" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otc-Cu-jDO">
+                                <rect key="frame" x="174.5" y="270" width="26.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type something you want to save" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mOC-BO-Cj4">
+                                <rect key="frame" x="16" y="307" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1J-Bg-eIZ">
+                                <rect key="frame" x="16" y="345" width="35" height="30"/>
+                                <state key="normal" title="Read"/>
+                                <connections>
+                                    <action selector="fileReadTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="R9q-zd-l2y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcD-nr-s5H">
+                                <rect key="frame" x="67" y="345" width="37" height="30"/>
+                                <state key="normal" title="Write"/>
+                                <connections>
+                                    <action selector="fileWriteTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mSr-l5-Ddo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jse-b7-W16">
+                                <rect key="frame" x="120" y="345" width="45" height="30"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="fileDeleteTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cjY-na-7ZM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ulS-fq-Jb7" firstAttribute="leading" secondItem="dHW-6J-PvJ" secondAttribute="trailing" constant="16" id="06e-Vr-mY8"/>
+                            <constraint firstItem="mOC-BO-Cj4" firstAttribute="top" secondItem="otc-Cu-jDO" secondAttribute="bottom" constant="16" id="10w-2r-Lgh"/>
+                            <constraint firstItem="dHW-6J-PvJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="30h-y7-azt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kgs-1r-vM1" secondAttribute="trailing" id="3XM-MG-OiQ"/>
+                            <constraint firstItem="ulS-fq-Jb7" firstAttribute="centerY" secondItem="dHW-6J-PvJ" secondAttribute="centerY" id="8Hi-ze-JbO"/>
+                            <constraint firstItem="8Lk-xw-2CC" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="8zA-3W-POf"/>
+                            <constraint firstItem="j1J-Bg-eIZ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="9pK-Hw-jtv"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Lfx-7V-pNB" secondAttribute="trailing" constant="20" symbolic="YES" id="9wd-C6-y19"/>
+                            <constraint firstItem="nny-IL-VAM" firstAttribute="centerY" secondItem="RTL-ya-E1j" secondAttribute="centerY" id="A3u-LR-883"/>
+                            <constraint firstItem="quG-0S-OnF" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="Co2-qM-Xci"/>
+                            <constraint firstItem="RTL-ya-E1j" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="GdY-KN-dva"/>
+                            <constraint firstItem="Ex0-3i-Nvf" firstAttribute="top" secondItem="quG-0S-OnF" secondAttribute="bottom" constant="16" id="Lt7-sD-SQb"/>
+                            <constraint firstItem="nny-IL-VAM" firstAttribute="leading" secondItem="RTL-ya-E1j" secondAttribute="trailing" constant="16" id="PJf-Ba-uTs"/>
+                            <constraint firstItem="otc-Cu-jDO" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Pwu-HA-sWT"/>
+                            <constraint firstItem="Lfx-7V-pNB" firstAttribute="leading" secondItem="ulS-fq-Jb7" secondAttribute="trailing" constant="16" id="RgM-97-9ZD"/>
+                            <constraint firstItem="fcD-nr-s5H" firstAttribute="leading" secondItem="j1J-Bg-eIZ" secondAttribute="trailing" constant="16" id="Ri8-z8-aoO"/>
+                            <constraint firstItem="Kgs-1r-vM1" firstAttribute="top" secondItem="8Lk-xw-2CC" secondAttribute="bottom" constant="16" id="Vk7-U9-tma"/>
+                            <constraint firstItem="j1J-Bg-eIZ" firstAttribute="top" secondItem="mOC-BO-Cj4" secondAttribute="bottom" constant="8" id="WOE-ng-R2R"/>
+                            <constraint firstItem="otc-Cu-jDO" firstAttribute="top" secondItem="RTL-ya-E1j" secondAttribute="bottom" constant="16" id="Xzl-5i-4XO"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wqp-Ct-dLh" secondAttribute="trailing" constant="20" symbolic="YES" id="bCq-KW-YWl"/>
+                            <constraint firstItem="RTL-ya-E1j" firstAttribute="top" secondItem="Kgs-1r-vM1" secondAttribute="bottom" constant="8" id="bYH-sq-wHP"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Jse-b7-W16" secondAttribute="trailing" constant="20" symbolic="YES" id="cQO-jb-JZy"/>
+                            <constraint firstItem="8Lk-xw-2CC" firstAttribute="top" secondItem="dHW-6J-PvJ" secondAttribute="bottom" constant="16" id="clm-r4-PaR"/>
+                            <constraint firstItem="dHW-6J-PvJ" firstAttribute="top" secondItem="Ex0-3i-Nvf" secondAttribute="bottom" constant="8" id="czg-Fq-aDh"/>
+                            <constraint firstItem="wqp-Ct-dLh" firstAttribute="leading" secondItem="nny-IL-VAM" secondAttribute="trailing" constant="16" id="fHp-Qw-kvv"/>
+                            <constraint firstItem="Ex0-3i-Nvf" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="gS9-yc-ypn"/>
+                            <constraint firstItem="mOC-BO-Cj4" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="mVb-VL-lH2"/>
+                            <constraint firstItem="quG-0S-OnF" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="mwI-R8-h9t"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mOC-BO-Cj4" secondAttribute="trailing" id="p3B-mU-oRI"/>
+                            <constraint firstItem="Jse-b7-W16" firstAttribute="leading" secondItem="fcD-nr-s5H" secondAttribute="trailing" constant="16" id="qEt-nO-Cfi"/>
+                            <constraint firstItem="Lfx-7V-pNB" firstAttribute="centerY" secondItem="ulS-fq-Jb7" secondAttribute="centerY" id="uEp-KV-UhE"/>
+                            <constraint firstItem="wqp-Ct-dLh" firstAttribute="centerY" secondItem="nny-IL-VAM" secondAttribute="centerY" id="ucz-Pz-Trr"/>
+                            <constraint firstItem="Kgs-1r-vM1" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="ufh-Ys-fnE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ex0-3i-Nvf" secondAttribute="trailing" id="zAo-GR-kbl"/>
+                            <constraint firstItem="fcD-nr-s5H" firstAttribute="centerY" secondItem="j1J-Bg-eIZ" secondAttribute="centerY" id="zSA-nV-Rd6"/>
+                            <constraint firstItem="Jse-b7-W16" firstAttribute="centerY" secondItem="fcD-nr-s5H" secondAttribute="centerY" id="zwR-kF-mc6"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="fileTextField" destination="mOC-BO-Cj4" id="75p-DH-CE2"/>
+                        <outlet property="keychainTextField" destination="Kgs-1r-vM1" id="DFc-NN-iGa"/>
+                        <outlet property="userDefaultsTextField" destination="Ex0-3i-Nvf" id="raQ-TA-KKe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

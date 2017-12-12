@@ -2,8 +2,7 @@
 //  ViewController.swift
 //  Holocron
 //
-//  Created by wmcginty on 12/11/2017.
-//  Copyright (c) 2017 wmcginty. All rights reserved.
+//  Copyright (c) 2017 Bottle Rocket Studios. All rights reserved.
 //
 
 import UIKit
