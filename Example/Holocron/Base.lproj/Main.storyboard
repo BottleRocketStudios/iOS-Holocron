@@ -38,21 +38,21 @@
                                 <rect key="frame" x="16" y="103" width="35" height="30"/>
                                 <state key="normal" title="Read"/>
                                 <connections>
-                                    <action selector="userDefaultsReadTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="kB3-iS-GsE"/>
+                                    <action selector="userDefaultsReadTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="1XD-T1-Rer"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulS-fq-Jb7">
                                 <rect key="frame" x="67" y="103" width="37" height="30"/>
                                 <state key="normal" title="Write"/>
                                 <connections>
-                                    <action selector="userDefaultsWriteTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="50p-W9-kl0"/>
+                                    <action selector="userDefaultsWriteTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="yNn-0n-v53"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfx-7V-pNB">
                                 <rect key="frame" x="120" y="103" width="45" height="30"/>
                                 <state key="normal" title="Delete"/>
                                 <connections>
-                                    <action selector="userDefaultsDeleteTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="p42-yD-c4v"/>
+                                    <action selector="userDefaultsDeleteTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ftf-A2-lra"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keychain" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Lk-xw-2CC">
@@ -71,21 +71,21 @@
                                 <rect key="frame" x="16" y="224" width="35" height="30"/>
                                 <state key="normal" title="Read"/>
                                 <connections>
-                                    <action selector="keychainReadTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7Yy-Ua-KeS"/>
+                                    <action selector="keychainReadTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="QCH-XZ-5gZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nny-IL-VAM">
                                 <rect key="frame" x="67" y="224" width="37" height="30"/>
                                 <state key="normal" title="Write"/>
                                 <connections>
-                                    <action selector="keychainWriteTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4f3-gX-eGc"/>
+                                    <action selector="keychainWriteTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="p17-fw-adR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqp-Ct-dLh">
                                 <rect key="frame" x="120" y="224" width="45" height="30"/>
                                 <state key="normal" title="Delete"/>
                                 <connections>
-                                    <action selector="keychainDeleteTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6C0-Ms-DZz"/>
+                                    <action selector="keychainDeleteTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="5kX-1U-zik"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="File" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otc-Cu-jDO">
@@ -104,21 +104,21 @@
                                 <rect key="frame" x="16" y="345" width="35" height="30"/>
                                 <state key="normal" title="Read"/>
                                 <connections>
-                                    <action selector="fileReadTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="R9q-zd-l2y"/>
+                                    <action selector="fileReadTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Z7W-cq-H6C"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcD-nr-s5H">
                                 <rect key="frame" x="67" y="345" width="37" height="30"/>
                                 <state key="normal" title="Write"/>
                                 <connections>
-                                    <action selector="fileWriteTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mSr-l5-Ddo"/>
+                                    <action selector="fileWriteTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FvZ-ZD-5yy"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jse-b7-W16">
                                 <rect key="frame" x="120" y="345" width="45" height="30"/>
                                 <state key="normal" title="Delete"/>
                                 <connections>
-                                    <action selector="fileDeleteTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cjY-na-7ZM"/>
+                                    <action selector="fileDeleteTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xAT-RI-ECr"/>
                                 </connections>
                             </button>
                         </subviews>

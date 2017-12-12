@@ -6,39 +6,28 @@
 //
 
 import UIKit
-
-import UIKit
 import Holocron
 import Result
 
 class ViewController: UIViewController {
     
-    lazy var userDefaultsPersistence: UserDefaultsPersistence = {
-        return UserDefaultsPersistence()
-    }()
+    lazy var userDefaultsPersistence: UserDefaultsPersistence = UserDefaultsPersistence()
     let userDefaultsStore = UserDefaultsStore(key: "testUserDefaults")
     
-    lazy var keychainPersistence: KeychainPersistence = {
-        return KeychainPersistence(keychainServiceName: "com.holocron.test")
-    }()
+    lazy var keychainPersistence: KeychainPersistence = KeychainPersistence(keychainServiceName: "com.holocron.test")
     let keyChainStore = KeychainStore(key: "testKeychainPersistence")
     
     let cacheDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
-    lazy var filePersistance: FilePersistence = {
-        return FilePersistence(directory: cacheDirectory)
-    }()
+    lazy var filePersistance: FilePersistence = FilePersistence(directory: cacheDirectory)
     let fileStore = FileStore(fileName: "testFilePersistance")
     
-    @IBOutlet weak var userDefaultsTextField: UITextField!
-    @IBOutlet weak var keychainTextField: UITextField!
-    @IBOutlet weak var fileTextField: UITextField!
+    @IBOutlet private var userDefaultsTextField: UITextField!
+    @IBOutlet private var keychainTextField: UITextField!
+    @IBOutlet private var fileTextField: UITextField!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
+
     // MARK: User Defaults
-    @IBAction func userDefaultsReadTouched(_ sender: Any) {
+    @IBAction func userDefaultsReadTapped(_ sender: Any) {
         userDefaultsPersistence.retrieve(object: userDefaultsStore) { [weak self] (result: Result<String, StorageError>) in
             switch result {
             case .success(let object):
@@ -49,7 +38,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func userDefaultsWriteTouched(_ sender: Any) {
+    @IBAction func userDefaultsWriteTapped(_ sender: Any) {
         guard let text = userDefaultsTextField.text, !text.isEmpty else { return }
         userDefaultsPersistence.write(object: text, for: userDefaultsStore) { [weak self] (result) in
             switch result {
@@ -61,7 +50,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func userDefaultsDeleteTouched(_ sender: Any) {
+    @IBAction func userDefaultsDeleteTapped(_ sender: Any) {
         userDefaultsPersistence.removeObject(for: userDefaultsStore) { [weak self] (result: Result<Bool, StorageError>) in
             switch result {
             case .success(_):
@@ -73,7 +62,7 @@ class ViewController: UIViewController {
     }
     
     // MARK: Keychain
-    @IBAction func keychainReadTouched(_ sender: Any) {
+    @IBAction func keychainReadTapped(_ sender: Any) {
         keychainPersistence.retrieve(object: keyChainStore) { [weak self] (result: Result<String, StorageError>) in
             switch result {
             case .success(let object):
@@ -84,7 +73,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func keychainWriteTouched(_ sender: Any) {
+    @IBAction func keychainWriteTapped(_ sender: Any) {
         guard let text = keychainTextField.text, !text.isEmpty else { return }
         keychainPersistence.write(object: text, for: keyChainStore) { [weak self] (result) in
             switch result {
@@ -96,7 +85,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func keychainDeleteTouched(_ sender: Any) {
+    @IBAction func keychainDeleteTapped(_ sender: Any) {
         keychainPersistence.removeObject(for: keyChainStore) { [weak self] (result: Result<Bool, StorageError>) in
             switch result {
             case .success(_):
@@ -108,7 +97,7 @@ class ViewController: UIViewController {
     }
     
     // MARK: File
-    @IBAction func fileReadTouched(_ sender: Any) {
+    @IBAction func fileReadTapped(_ sender: Any) {
         filePersistance.retrieve(object: fileStore) { [weak self] (result: Result<String, StorageError>) in
             switch result {
             case .success(let object):
@@ -119,7 +108,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func fileWriteTouched(_ sender: Any) {
+    @IBAction func fileWriteTapped(_ sender: Any) {
         guard let text = fileTextField.text, !text.isEmpty else { return }
         filePersistance.write(object: text, for: fileStore) { [weak self] (result) in
             switch result {
@@ -131,7 +120,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func fileDeleteTouched(_ sender: Any) {
+    @IBAction func fileDeleteTapped(_ sender: Any) {
         filePersistance.removeObject(for: fileStore) { [weak self] (result) in
             switch result {
             case .success(_):
@@ -143,6 +132,7 @@ class ViewController: UIViewController {
     }
 }
 
+//MARK: Alert Presentation
 extension ViewController {
     func presentAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
