@@ -1,41 +1,37 @@
 # Holocron
 
 ## Purpose
-This library provides a simple abstraction around the common techniques of data persistence like UserDefaults, Keychain and FileManager.
+This library provides a simple abstraction around the common methods of persisting data, such as UserDefaults,  the Keychain and the file system.
 
 ## Usage
-An instance of UserDefaults or Keychain or FileManager needs to be created so that you can do the common operations like write, read and delete based on the type of persistence technique you chose. This library has the KeychainAccess as a dependency
+An instance of UserDefaultsPersistence, KeychainPersistence or FilePersistence needs to be created so that you can perform common operations like write, read and delete. While UserDefaultsPersistence and FilePersistence have no outside dependencies, KeychainPersistence uses the KeychainAccess Cocoapod when interacting with the Keychain.
 
-Below is an example as to how is easy to setup each individual persistence store
+Below are examples of how to set up each individual persistence type and store some object using it:
 
 ``` swift
 // UserDefaults
-lazy var userDefaultsPersistence: UserDefaultsPersistence = {
-return UserDefaultsPersistence()
-}()
-let userDefaultsStore = UserDefaultsStore(key: "testUserDefaults")
-
+let userDefaultsPersistence = UserDefaultsPersistence()
+try? userDefaultsPersistence.write(object: myObject, for: "someKey")
 ```
 
 ``` swift
 // Keychain
-lazy var keychainPersistence: KeychainPersistence = {
-return KeychainPersistence(keychainServiceName: "com.holocron.test")
-}()
-let keyChainStore = KeychainStore(key: "testKeychainPersistence")
+let keychainPersistence = KeychainPersistence(keychainServiceName: "com.holocron.test")
+try? keychainPersistence.write(object: myObject, for: "someKeychainKey")
 ```
 
 ``` swift
 // File Management
-let cacheDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
-lazy var filePersistance: FilePersistence = {
-return FilePersistence(directory: cacheDirectory)
-}()
+let filePersistence = FilePersistence(directory: cacheDirectory)
 let fileStore = FileStore(fileName: "testFilePersistance")
-
+filePersistence.write(object: myObject, for: fileStore) { result in
+    switch result {
+    case .success(let object): print("\(object) was written to disk!")
+    case .failure(let error): print("Error: \(error)")
+    }
+}
 ```
 
-[![CI Status](http://img.shields.io/travis/wmcginty/Holocron.svg?style=flat)](https://travis-ci.org/wmcginty/Holocron)
 [![Version](https://img.shields.io/cocoapods/v/Holocron.svg?style=flat)](http://cocoapods.org/pods/Holocron)
 [![License](https://img.shields.io/cocoapods/l/Holocron.svg?style=flat)](http://cocoapods.org/pods/Holocron)
 [![Platform](https://img.shields.io/cocoapods/p/Holocron.svg?style=flat)](http://cocoapods.org/pods/Holocron)
