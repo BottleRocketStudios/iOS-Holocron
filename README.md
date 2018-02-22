@@ -1,5 +1,8 @@
 # Holocron
 
+[![codecov](https://codecov.io/gh/BottleRocketStudios/iOS-Holocron/branch/master/graph/badge.svg)](https://codecov.io/gh/BottleRocketStudios/iOS-Holocron)
+[![codebeat badge](https://codebeat.co/badges/b73d3990-6ece-4984-b8d9-185479e86108)](https://codebeat.co/projects/github-com-bottlerocketstudios-ios-holocron-master)
+
 ## Purpose
 This library provides a simple abstraction around the common methods of persisting data, such as UserDefaults,  the Keychain and the file system.
 
