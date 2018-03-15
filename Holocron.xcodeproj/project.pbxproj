@@ -30,6 +30,7 @@
 		0EBC2704205ADFE400370431 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0EBC26BE205AD7D800370431 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0EBC2705205ADFE600370431 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EBC26C0205AD7DB00370431 /* KeychainAccess.framework */; };
 		0EBC2706205ADFE600370431 /* KeychainAccess.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0EBC26C0205AD7DB00370431 /* KeychainAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0EBC270B205AEA7900370431 /* StorageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC270A205AEA7900370431 /* StorageRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		0EBC26F4205ADDB400370431 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "Examples/Holocron-iOSExample/Main.storyboard"; sourceTree = SOURCE_ROOT; };
 		0EBC26F5205ADDB400370431 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Examples/Holocron-iOSExample/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		0EBC2707205AE47400370431 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0EBC270A205AEA7900370431 /* StorageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageRequest.swift; sourceTree = "<group>"; };
 		0EF541971FDF2B8B002B0B25 /* DirectoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryTests.swift; sourceTree = "<group>"; };
 		0EF541981FDF2B8B002B0B25 /* UserDefaultsPersistenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsPersistenceTests.swift; sourceTree = "<group>"; };
 		0EF541991FDF2B8B002B0B25 /* FilePersistenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePersistenceTests.swift; sourceTree = "<group>"; };
@@ -127,8 +129,7 @@
 			children = (
 				0EBC26EF205ADDA100370431 /* Holocron-iOSExample */,
 			);
-			name = Examples;
-			path = "New Group";
+			path = Examples;
 			sourceTree = "<group>";
 		};
 		0EBC26EF205ADDA100370431 /* Holocron-iOSExample */ = {
@@ -144,6 +145,25 @@
 			path = "Holocron-iOSExample";
 			sourceTree = "<group>";
 		};
+		0EBC2708205AEA6A00370431 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				0EBC270A205AEA7900370431 /* StorageRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		0EBC2709205AEA7000370431 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				0EBC26B8205AD4CE00370431 /* StorageContainer.swift */,
+				0EBC26B7205AD4CE00370431 /* FilePersistence.swift */,
+				0EBC26B6205AD4CE00370431 /* KeychainPersistence.swift */,
+				0EBC26B9205AD4CE00370431 /* UserDefaultsPersistence.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
 		0EFE220E205AD42100838114 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,10 +176,8 @@
 		0EFE220F205AD44A00838114 /* Holocron */ = {
 			isa = PBXGroup;
 			children = (
-				0EBC26B7205AD4CE00370431 /* FilePersistence.swift */,
-				0EBC26B6205AD4CE00370431 /* KeychainPersistence.swift */,
-				0EBC26B8205AD4CE00370431 /* StorageContainer.swift */,
-				0EBC26B9205AD4CE00370431 /* UserDefaultsPersistence.swift */,
+				0EBC2709205AEA7000370431 /* Container */,
+				0EBC2708205AEA6A00370431 /* Request */,
 			);
 			path = Holocron;
 			sourceTree = "<group>";
@@ -394,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EBC26FB205ADDB500370431 /* AppDelegate.swift in Sources */,
+				0EBC270B205AEA7900370431 /* StorageRequest.swift in Sources */,
 				0EBC26F6205ADDB500370431 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
