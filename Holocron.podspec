@@ -18,7 +18,7 @@ s.summary          = 'A framework designed to make data persistence fast and eas
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
 s.description      = <<-DESC
-A framework designed to make data persistence fast and easy.
+Holocron is a framework designed to make data persistence fast and easy.
 DESC
 
 s.homepage         = 'https://github.com/BottleRocketStudios/iOS-Holocron'
@@ -27,7 +27,7 @@ s.author           = { 'Bottle Rocket Studios' => 'will.mcginty@bottlerocketstud
 s.source           = { :git => 'https://github.com/bottlerocketstudios/iOS-Holocron.git', :tag => s.version.to_s }
 
 s.ios.deployment_target = '9.0'
-s.source_files = 'Holocron/Classes/**/*'
+s.source_files = 'Sources/**/*'
 s.dependency 'Result'
 s.dependency 'KeychainAccess'
 end
