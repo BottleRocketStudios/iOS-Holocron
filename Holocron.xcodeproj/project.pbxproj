@@ -84,6 +84,7 @@
 		0EBC26F3205ADDB400370431 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LaunchScreen.xib; path = "Examples/Holocron-iOSExample/LaunchScreen.xib"; sourceTree = SOURCE_ROOT; };
 		0EBC26F4205ADDB400370431 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "Examples/Holocron-iOSExample/Main.storyboard"; sourceTree = SOURCE_ROOT; };
 		0EBC26F5205ADDB400370431 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Examples/Holocron-iOSExample/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
+		0EBC2707205AE47400370431 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0EF541971FDF2B8B002B0B25 /* DirectoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryTests.swift; sourceTree = "<group>"; };
 		0EF541981FDF2B8B002B0B25 /* UserDefaultsPersistenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsPersistenceTests.swift; sourceTree = "<group>"; };
 		0EF541991FDF2B8B002B0B25 /* FilePersistenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePersistenceTests.swift; sourceTree = "<group>"; };
@@ -175,6 +176,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				0EBC2707205AE47400370431 /* README.md */,
 				0EFE220E205AD42100838114 /* Sources */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				0EBC26EE205ADD9900370431 /* Examples */,
