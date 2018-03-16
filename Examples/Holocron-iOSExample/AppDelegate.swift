@@ -29,14 +29,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(d["key"] ?? "nothing")
         
         d["key2"] = b
-        print(d["key2"] ?? "nothing")
+        print(d["key2"] ?? Something(id: 0))
         
         //keychain
         k["key"] = a
         print(k["key"] ?? "nothing")
         
         k["key2"] = b
-        print(k["key2"] ?? "nothing")
+        print(k["key2"] ?? Something(id: 0))
         
         //file
         let s1 = FileContainer.StorageOptions(url: FileManager.default.urls(for: .applicationDirectory, in: .userDomainMask).first!)
@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let s2 = FileContainer.StorageOptions(url: FileManager.default.urls(for: .applicationDirectory, in: .userDomainMask).last!)
         f[s2] = b
-        print(f[s2] ?? "nothing")
+        print(f[s2] ?? Something(id: 0))
 
         return true
     }
