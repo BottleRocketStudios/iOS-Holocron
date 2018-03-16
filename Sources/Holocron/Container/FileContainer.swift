@@ -9,6 +9,11 @@
 import Foundation
 
 public struct FileContainer: Container {
+    
+    //MARK: Error Subtype
+    public enum Error: Swift.Error {
+        case noParentDirectory
+    }
 
     //MARK: Options Subtype
     public struct StorageOptions {
@@ -41,7 +46,7 @@ public struct FileContainer: Container {
     }
     
     public func retrieve<T: Storable>(with options: StorageOptions) throws -> T? {
-        guard let data = archivedData(at: options.url) else { return nil }
+        guard let data = try archivedData(at: options.url) else { return nil }
         return try T.decoded(from: data)
     }
     
@@ -51,19 +56,30 @@ public struct FileContainer: Container {
     
     //MARK: Helper
     public func archive(data: Data, to url: URL, overwrite: Bool, fileProtection: FileProtectionType?) throws {
+        func write(_ data: Data, to url: URL, fileProtection: FileProtectionType?) {
+            let attributes = [FileAttributeKey.protectionKey : fileProtection ?? self.fileProtection]
+            fileManager.createFile(atPath: url.path, contents: data, attributes: attributes)
+        }
+        
         if fileManager.fileExists(atPath: url.path) {
             guard overwrite else { return /* File exists, and we don't overwrite */ }
             try fileManager.removeItem(at: url)
         }
         
-        //let containerDirectoryPath = NSString(string: url.path).deletingLastPathComponent
-        //try fileManager.createDirectory(atPath: containerDirectoryPath, withIntermediateDirectories: false, attributes: nil)
-    
-        let attributes = [FileAttributeKey.protectionKey : fileProtection ?? self.fileProtection]
-        fileManager.createFile(atPath: url.path, contents: data, attributes: attributes)
+        var isDirectory: ObjCBool = false
+        let containerDirectoryPath = NSString(string: url.path).deletingLastPathComponent
+        let containerExists = fileManager.fileExists(atPath: containerDirectoryPath, isDirectory: &isDirectory)
+        
+        if containerExists {
+            guard isDirectory.boolValue else { throw Error.noParentDirectory }
+            write(data, to: url, fileProtection: fileProtection)
+        } else {
+            try fileManager.createDirectory(atPath: containerDirectoryPath, withIntermediateDirectories: true, attributes: nil)
+            write(data, to: url, fileProtection: fileProtection)
+        }
     }
     
-    public func archivedData(at url: URL) -> Data? {
-        return try? Data(contentsOf: url)
+    public func archivedData(at url: URL) throws -> Data? {
+        return try Data(contentsOf: url)
     }
 }

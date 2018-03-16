@@ -24,28 +24,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let a = "helllooo"
         let b = Something(id: 1)
         
-        //defaults
-        d["key"] = a
-        print(d["key"] ?? "nothing")
-        
-        d["key2"] = b
-        print(d["key2"] ?? Something(id: 0))
-        
-        //keychain
-        k["key"] = a
-        print(k["key"] ?? "nothing")
-        
-        k["key2"] = b
-        print(k["key2"] ?? Something(id: 0))
+//        //defaults
+//        d["key"] = a
+//        print(d["key"] ?? "nothing")
+//
+//        d["key2"] = b
+//        print(d["key2"] ?? Something(id: 0))
+//
+//        //keychain
+//        k["key"] = a
+//        print(k["key"] ?? "nothing")
+//
+//        k["key2"] = b
+//        print(k["key2"] ?? Something(id: 0))
         
         //file
-        let s1 = FileContainer.StorageOptions(url: FileManager.default.urls(for: .applicationDirectory, in: .userDomainMask).first!)
-        f[s1] = a
-        print(f[s1] ?? "nothing")
-
-        let s2 = FileContainer.StorageOptions(url: FileManager.default.urls(for: .applicationDirectory, in: .userDomainMask).last!)
-        f[s2] = b
-        print(f[s2] ?? Something(id: 0))
+        let docsDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        
+        let f1 = FileContainer.StorageOptions(url: docsDir.appendingPathComponent("a"))
+        let f2 = FileContainer.StorageOptions(url: docsDir.appendingPathComponent("b").appendingPathComponent("c"))
+        let f3 = FileContainer.StorageOptions(url: docsDir.appendingPathComponent("b").appendingPathComponent("d").appendingPathComponent("e"))
+        
+        f[f1] = a
+        f[f2] = a
+        f[f3] = a
+        
+        print(f[f1] ?? "nope")
+        print(f[f2] ?? "nope")
+        print(f[f3] ?? "nope")
+        
+//        let s1 = FileContainer.StorageOptions(url: FileManager.default.urls(for: .applicationDirectory, in: .userDomainMask).first!)
+//        f[s1] = a
+//        print(f[s1] ?? "nothing")
+//
+//        let s2 = FileContainer.StorageOptions(url: FileManager.default.urls(for: .applicationDirectory, in: .userDomainMask).last!)
+//        f[s2] = b
+//        print(f[s2] ?? Something(id: 0))
 
         return true
     }
