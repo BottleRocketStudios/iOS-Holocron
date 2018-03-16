@@ -6,15 +6,53 @@
 //
 
 import UIKit
+import Holocron
+import KeychainAccess
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        let d = UserDefaults.standard
+        let k = KeychainContainer(keychain: Keychain(service: "service"))
+        let f = FileContainer(fileProtectionType: .completeUntilFirstUserAuthentication)
+        
+        let a = "helllooo"
+        let b = Something(id: 1)
+        
+        //defaults
+        try? d.store(a, with: "key")
+        let y: String? = d.retrieve(with: "key")
+        print(y ?? "nothing")
+        
+        try? d.store(b, with: "key2")
+        let z: Something? = d.retrieve(with: "key2")
+        print(z ?? "nothing")
+        
+        //keychain
+        try? k.store(a, with: "key")
+        let m: String? = k.retrieve(with: "key")
+        print(m ?? "nothing")
+        
+        try? k.store(b, with: "key2")
+        let n: Something? = k.retrieve(with: "key2")
+        print(n ?? "nothing")
+        
+        //file
+        let s1 = FileContainer.StorageOptions(url: FileManager.default.urls(for: .applicationDirectory, in: .userDomainMask).first!)
+        try? f.store(a, with: s1)
+        let r: String? = f.retrieve(with: s1)
+        print(r ?? "nothing")
+        
+        let s2 = FileContainer.StorageOptions(url: FileManager.default.urls(for: .applicationDirectory, in: .userDomainMask).last!) 
+        try? f.store(b, with: s2)
+        let t: Something? = f.retrieve(with: s2)
+        print(t ?? "nothing")
+
         return true
     }
 
@@ -39,7 +77,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+}
 
-
+struct Something: Codable, Storable {
+    public let id: Int
 }
 
