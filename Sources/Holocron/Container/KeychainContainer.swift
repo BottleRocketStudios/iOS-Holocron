@@ -9,7 +9,6 @@
 import Foundation
 import KeychainAccess
 
-
 public struct KeychainContainer: Container {
     
     //MARK: Options Subtype
@@ -35,8 +34,12 @@ public struct KeychainContainer: Container {
         return try keychain.set(element.encoded(), key: options.key)
     }
     
-    public func retrieve<T>(with options: StorageOptions) -> T? where T : Storable {
+    public func retrieve<T: Storable>(with options: StorageOptions) throws -> T? {
         guard let data = keychain[data: options.key] else { return nil }
-        return try? T.decoded(from: data)
+        return try T.decoded(from: data)
+    }
+    
+    public func removeElement(with options: KeychainContainer.StorageOptions) {
+        try? keychain.remove(options.key)
     }
 }

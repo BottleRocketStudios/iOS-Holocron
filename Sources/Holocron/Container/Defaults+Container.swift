@@ -30,8 +30,12 @@ extension UserDefaults: Container {
         try set(element.encoded(), forKey: options.key)
     }
     
-    public func retrieve<T>(with options: StorageOptions) -> T? where T : Storable {
+    public func retrieve<T: Storable>(with options: StorageOptions) throws -> T? {
         guard let data = object(forKey: options.key) as? Data else { return nil }
-        return try? T.decoded(from: data)
+        return try T.decoded(from: data)
+    }
+    
+    public func removeElement(with options: UserDefaults.StorageOptions) {
+        removeObject(forKey: options.key)
     }
 }

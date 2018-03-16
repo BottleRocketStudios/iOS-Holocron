@@ -12,12 +12,16 @@ import Foundation
 extension String: Storable {
     
     public func encoded() throws -> Data {
-        guard let data = data(using: .utf8) else { throw StorageError2.encodingError }
+        guard let data = data(using: .utf8) else {
+            throw EncodingError.invalidValue(self, EncodingError.Context(codingPath: [], debugDescription: "The string \(self) could not be UTF8 encoded into Data."))
+        }
         return data
     }
     
     public static func decoded(from data: Data) throws -> String {
-        guard let string = String(data: data, encoding: .utf8) else { throw StorageError2.decodingError }
+        guard let string = String(data: data, encoding: .utf8) else {
+            throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: [], debugDescription: "The bytes [\(data)] could not be UTF8 decoded into a String."))
+        }
         return string
     }
 }

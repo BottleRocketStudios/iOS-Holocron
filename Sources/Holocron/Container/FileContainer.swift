@@ -40,9 +40,13 @@ public struct FileContainer: Container {
         try archive(data: element.encoded(), to: options.url, overwrite: options.overwrite, fileProtection: options.fileProtection)
     }
     
-    public func retrieve<T>(with options: StorageOptions) -> T? where T : Storable {
+    public func retrieve<T: Storable>(with options: StorageOptions) throws -> T? {
         guard let data = archivedData(at: options.url) else { return nil }
-        return try? T.decoded(from: data)
+        return try T.decoded(from: data)
+    }
+    
+    public func removeElement(with options: FileContainer.StorageOptions) {
+        try? fileManager.removeItem(at: options.url)
     }
     
     //MARK: Helper

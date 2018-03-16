@@ -17,41 +17,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-        let d = UserDefaults.standard
-        let k = KeychainContainer(keychain: Keychain(service: "service"))
-        let f = FileContainer(fileProtectionType: .completeUntilFirstUserAuthentication)
+        var d = UserDefaults.standard
+        var k = KeychainContainer(keychain: Keychain(service: "service"))
+        var f = FileContainer(fileProtectionType: .completeUntilFirstUserAuthentication)
         
         let a = "helllooo"
         let b = Something(id: 1)
         
         //defaults
-        try? d.store(a, with: "key")
-        let y: String? = d.retrieve(with: "key")
-        print(y ?? "nothing")
+        d["key"] = a
+        print(d["key"] ?? "nothing")
         
-        try? d.store(b, with: "key2")
-        let z: Something? = d.retrieve(with: "key2")
-        print(z ?? "nothing")
+        d["key2"] = b
+        print(d["key2"] ?? "nothing")
         
         //keychain
-        try? k.store(a, with: "key")
-        let m: String? = k.retrieve(with: "key")
-        print(m ?? "nothing")
+        k["key"] = a
+        print(k["key"] ?? "nothing")
         
-        try? k.store(b, with: "key2")
-        let n: Something? = k.retrieve(with: "key2")
-        print(n ?? "nothing")
+        k["key2"] = b
+        print(k["key2"] ?? "nothing")
         
         //file
         let s1 = FileContainer.StorageOptions(url: FileManager.default.urls(for: .applicationDirectory, in: .userDomainMask).first!)
-        try? f.store(a, with: s1)
-        let r: String? = f.retrieve(with: s1)
-        print(r ?? "nothing")
-        
-        let s2 = FileContainer.StorageOptions(url: FileManager.default.urls(for: .applicationDirectory, in: .userDomainMask).last!) 
-        try? f.store(b, with: s2)
-        let t: Something? = f.retrieve(with: s2)
-        print(t ?? "nothing")
+        f[s1] = a
+        print(f[s1] ?? "nothing")
+
+        let s2 = FileContainer.StorageOptions(url: FileManager.default.urls(for: .applicationDirectory, in: .userDomainMask).last!)
+        f[s2] = b
+        print(f[s2] ?? "nothing")
 
         return true
     }

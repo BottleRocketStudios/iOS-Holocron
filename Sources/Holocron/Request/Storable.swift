@@ -13,8 +13,3 @@ public protocol Storable {
     func encoded() throws -> Data
     static func decoded(from data: Data) throws -> Self
 }
-
-public enum StorageError2: Swift.Error {
-    case encodingError
-    case decodingError //TODO: Can these be put in terms of the Foundation decoding/encoding errors?
-}
