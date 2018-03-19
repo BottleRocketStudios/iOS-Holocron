@@ -41,13 +41,13 @@ public struct FileContainer: Container {
     }
     
     //MARK: Container
-    public func store(_ element: Storable, with options: StorageOptions) throws {
-        try archive(data: element.encoded(), to: options.url, overwrite: options.overwrite, fileProtection: options.fileProtection)
+    public func store(_ element: Codable, with options: StorageOptions) throws {
+        try archive(data: element.defaultlyEncoded(), to: options.url, overwrite: options.overwrite, fileProtection: options.fileProtection)
     }
     
-    public func retrieve<T: Storable>(with options: StorageOptions) throws -> T? {
+    public func retrieve<T: Codable>(with options: StorageOptions) throws -> T? {
         guard let data = try archivedData(at: options.url) else { return nil }
-        return try T.decoded(from: data)
+        return try data.defaultlyDecoded()
     }
     
     public func removeElement(with options: FileContainer.StorageOptions) {

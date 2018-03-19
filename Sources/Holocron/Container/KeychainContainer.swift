@@ -30,13 +30,13 @@ public struct KeychainContainer: Container {
     }
     
     //MARK: Container
-    public func store(_ element: Storable, with options: StorageOptions) throws {
-        return try keychain.set(element.encoded(), key: options.key)
+    public func store(_ element: Codable, with options: StorageOptions) throws {
+        return try keychain.set(element.defaultlyEncoded(), key: options.key)
     }
     
-    public func retrieve<T: Storable>(with options: StorageOptions) throws -> T? {
+    public func retrieve<T: Codable>(with options: StorageOptions) throws -> T? {
         guard let data = keychain[data: options.key] else { return nil }
-        return try T.decoded(from: data)
+        return try data.defaultlyDecoded()
     }
     
     public func removeElement(with options: KeychainContainer.StorageOptions) {

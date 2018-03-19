@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		0EBC26A0205AD48800370431 /* Holocron.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EBC2697205AD48800370431 /* Holocron.framework */; };
 		0EBC26A7205AD48800370431 /* Holocron.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EBC2699205AD48800370431 /* Holocron.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0EBC26BA205AD4CE00370431 /* KeychainPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC26B6205AD4CE00370431 /* KeychainPersistence.swift */; };
-		0EBC26BB205AD4CE00370431 /* FilePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC26B7205AD4CE00370431 /* FilePersistence.swift */; };
-		0EBC26BC205AD4CE00370431 /* StorageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC26B8205AD4CE00370431 /* StorageContainer.swift */; };
-		0EBC26BD205AD4CE00370431 /* UserDefaultsPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC26B9205AD4CE00370431 /* UserDefaultsPersistence.swift */; };
 		0EBC26C2205AD82700370431 /* DirectoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF541971FDF2B8B002B0B25 /* DirectoryTests.swift */; };
 		0EBC26C3205AD82900370431 /* FilePersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF541991FDF2B8B002B0B25 /* FilePersistenceTests.swift */; };
 		0EBC26C4205AD82C00370431 /* KeychainPersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5419A1FDF2B8B002B0B25 /* KeychainPersistenceTests.swift */; };
@@ -30,12 +26,11 @@
 		0EBC2704205ADFE400370431 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0EBC26BE205AD7D800370431 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0EBC2705205ADFE600370431 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EBC26C0205AD7DB00370431 /* KeychainAccess.framework */; };
 		0EBC2706205ADFE600370431 /* KeychainAccess.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0EBC26C0205AD7DB00370431 /* KeychainAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0EBC2712205C12C600370431 /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC2711205C12C600370431 /* Storable.swift */; };
-		0EBC2714205C154000370431 /* Storable+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC2713205C154000370431 /* Storable+Defaults.swift */; };
 		0EBC2716205C17AC00370431 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC2715205C17AC00370431 /* Container.swift */; };
 		0EBC2718205C183900370431 /* Defaults+Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC2717205C183900370431 /* Defaults+Container.swift */; };
 		0EBC271A205C1C6200370431 /* KeychainContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC2719205C1C6200370431 /* KeychainContainer.swift */; };
 		0EBC271C205C1C6800370431 /* FileContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC271B205C1C6800370431 /* FileContainer.swift */; };
+		0EBC275C20601CD000370431 /* Codable+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC275B20601CD000370431 /* Codable+Default.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,10 +72,6 @@
 		0EBC269A205AD48800370431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EBC269F205AD48800370431 /* Holocron-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Holocron-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EBC26A6205AD48800370431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Supporting Files/Info.plist"; sourceTree = "<group>"; };
-		0EBC26B6205AD4CE00370431 /* KeychainPersistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPersistence.swift; sourceTree = "<group>"; };
-		0EBC26B7205AD4CE00370431 /* FilePersistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePersistence.swift; sourceTree = "<group>"; };
-		0EBC26B8205AD4CE00370431 /* StorageContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageContainer.swift; sourceTree = "<group>"; };
-		0EBC26B9205AD4CE00370431 /* UserDefaultsPersistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsPersistence.swift; sourceTree = "<group>"; };
 		0EBC26BE205AD7D800370431 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		0EBC26C0205AD7DB00370431 /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
 		0EBC26CE205ADD5300370431 /* Holocron-iOSExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Holocron-iOSExample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,12 +82,11 @@
 		0EBC26F4205ADDB400370431 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "Examples/Holocron-iOSExample/Main.storyboard"; sourceTree = SOURCE_ROOT; };
 		0EBC26F5205ADDB400370431 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Examples/Holocron-iOSExample/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		0EBC2707205AE47400370431 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		0EBC2711205C12C600370431 /* Storable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storable.swift; sourceTree = "<group>"; };
-		0EBC2713205C154000370431 /* Storable+Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storable+Defaults.swift"; sourceTree = "<group>"; };
 		0EBC2715205C17AC00370431 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		0EBC2717205C183900370431 /* Defaults+Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Defaults+Container.swift"; sourceTree = "<group>"; };
 		0EBC2719205C1C6200370431 /* KeychainContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainContainer.swift; sourceTree = "<group>"; };
 		0EBC271B205C1C6800370431 /* FileContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileContainer.swift; sourceTree = "<group>"; };
+		0EBC275B20601CD000370431 /* Codable+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Default.swift"; sourceTree = "<group>"; };
 		0EF541971FDF2B8B002B0B25 /* DirectoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryTests.swift; sourceTree = "<group>"; };
 		0EF541981FDF2B8B002B0B25 /* UserDefaultsPersistenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsPersistenceTests.swift; sourceTree = "<group>"; };
 		0EF541991FDF2B8B002B0B25 /* FilePersistenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePersistenceTests.swift; sourceTree = "<group>"; };
@@ -155,28 +145,23 @@
 			path = "Holocron-iOSExample";
 			sourceTree = "<group>";
 		};
-		0EBC2708205AEA6A00370431 /* Request */ = {
-			isa = PBXGroup;
-			children = (
-				0EBC2711205C12C600370431 /* Storable.swift */,
-				0EBC2713205C154000370431 /* Storable+Defaults.swift */,
-			);
-			path = Request;
-			sourceTree = "<group>";
-		};
 		0EBC2709205AEA7000370431 /* Container */ = {
 			isa = PBXGroup;
 			children = (
-				0EBC26B8205AD4CE00370431 /* StorageContainer.swift */,
-				0EBC26B7205AD4CE00370431 /* FilePersistence.swift */,
-				0EBC26B6205AD4CE00370431 /* KeychainPersistence.swift */,
-				0EBC26B9205AD4CE00370431 /* UserDefaultsPersistence.swift */,
 				0EBC2715205C17AC00370431 /* Container.swift */,
 				0EBC2717205C183900370431 /* Defaults+Container.swift */,
 				0EBC2719205C1C6200370431 /* KeychainContainer.swift */,
 				0EBC271B205C1C6800370431 /* FileContainer.swift */,
 			);
 			path = Container;
+			sourceTree = "<group>";
+		};
+		0EBC275A20601CBF00370431 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0EBC275B20601CD000370431 /* Codable+Default.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		0EFE220E205AD42100838114 /* Sources */ = {
@@ -191,8 +176,8 @@
 		0EFE220F205AD44A00838114 /* Holocron */ = {
 			isa = PBXGroup;
 			children = (
+				0EBC275A20601CBF00370431 /* Extensions */,
 				0EBC2709205AEA7000370431 /* Container */,
-				0EBC2708205AEA6A00370431 /* Request */,
 			);
 			path = Holocron;
 			sourceTree = "<group>";
@@ -404,16 +389,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EBC26BD205AD4CE00370431 /* UserDefaultsPersistence.swift in Sources */,
 				0EBC271A205C1C6200370431 /* KeychainContainer.swift in Sources */,
 				0EBC2718205C183900370431 /* Defaults+Container.swift in Sources */,
 				0EBC271C205C1C6800370431 /* FileContainer.swift in Sources */,
-				0EBC2712205C12C600370431 /* Storable.swift in Sources */,
-				0EBC26BA205AD4CE00370431 /* KeychainPersistence.swift in Sources */,
-				0EBC26BB205AD4CE00370431 /* FilePersistence.swift in Sources */,
 				0EBC2716205C17AC00370431 /* Container.swift in Sources */,
-				0EBC26BC205AD4CE00370431 /* StorageContainer.swift in Sources */,
-				0EBC2714205C154000370431 /* Storable+Defaults.swift in Sources */,
+				0EBC275C20601CD000370431 /* Codable+Default.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

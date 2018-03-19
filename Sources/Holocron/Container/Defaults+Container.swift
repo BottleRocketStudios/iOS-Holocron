@@ -26,13 +26,13 @@ public extension UserDefaults {
 //MARK: Container
 extension UserDefaults: Container {
     
-    public func store(_ element: Storable, with options: StorageOptions) throws {
-        try set(element.encoded(), forKey: options.key)
+    public func store(_ element: Codable, with options: StorageOptions) throws {
+        try set(element.defaultlyEncoded(), forKey: options.key)
     }
     
-    public func retrieve<T: Storable>(with options: StorageOptions) throws -> T? {
+    public func retrieve<T: Codable>(with options: StorageOptions) throws -> T? {
         guard let data = object(forKey: options.key) as? Data else { return nil }
-        return try T.decoded(from: data)
+        return try data.defaultlyDecoded()
     }
     
     public func removeElement(with options: UserDefaults.StorageOptions) {

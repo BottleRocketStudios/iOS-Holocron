@@ -11,14 +11,14 @@ import Foundation
 public protocol Container {
     associatedtype Options
     
-    func store(_ element: Storable, with options: Options) throws
-    func retrieve<T: Storable>(with options: Options) throws -> T?
+    func store(_ element: Codable, with options: Options) throws
+    func retrieve<T: Codable>(with options: Options) throws -> T?
     func removeElement(with options: Options)
 }
 
-extension Container {
+public extension Container {
     
-    public subscript<T: Storable>(options: Options) -> T? {
+    subscript<T: Codable>(options: Options) -> T? {
         get {
             let element: T?? = try? retrieve(with: options)
             return element ?? nil
