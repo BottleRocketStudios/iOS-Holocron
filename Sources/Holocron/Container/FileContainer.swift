@@ -41,8 +41,16 @@ public struct FileContainer: Container {
     }
     
     //MARK: Container
+    public func store(_ element: Data, with options: StorageOptions) throws {
+        try archive(data: element, to: options.url, overwrite: options.overwrite, fileProtection: options.fileProtection)
+    }
+    
     public func store(_ element: Codable, with options: StorageOptions) throws {
         try archive(data: element.defaultlyEncoded(), to: options.url, overwrite: options.overwrite, fileProtection: options.fileProtection)
+    }
+    
+    public func retrieve(with options: StorageOptions) throws -> Data? {
+        return try archivedData(at: options.url)
     }
     
     public func retrieve<T: Codable>(with options: StorageOptions) throws -> T? {
@@ -55,7 +63,7 @@ public struct FileContainer: Container {
     }
     
     //MARK: Helper
-    public func archive(data: Data, to url: URL, overwrite: Bool, fileProtection: FileProtectionType?) throws {
+    private func archive(data: Data, to url: URL, overwrite: Bool, fileProtection: FileProtectionType?) throws {
         func write(_ data: Data, to url: URL, fileProtection: FileProtectionType?) {
             let attributes = [FileAttributeKey.protectionKey : fileProtection ?? self.fileProtection]
             fileManager.createFile(atPath: url.path, contents: data, attributes: attributes)
@@ -79,7 +87,12 @@ public struct FileContainer: Container {
         }
     }
     
-    public func archivedData(at url: URL) throws -> Data? {
-        return try Data(contentsOf: url)
+    private func archivedData(at url: URL) throws -> Data? {
+        do {
+            return try Data(contentsOf: url)
+        } catch (let error) {
+            guard (error as NSError).domain == "NSCocoaErrorDomain", (error as NSError).code == 260 /* no such file or directory */ else { throw error }
+            return nil
+        }
     }
 }

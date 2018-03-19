@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		0EBC26A0205AD48800370431 /* Holocron.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EBC2697205AD48800370431 /* Holocron.framework */; };
 		0EBC26A7205AD48800370431 /* Holocron.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EBC2699205AD48800370431 /* Holocron.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0EBC26C2205AD82700370431 /* DirectoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF541971FDF2B8B002B0B25 /* DirectoryTests.swift */; };
-		0EBC26C3205AD82900370431 /* FilePersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF541991FDF2B8B002B0B25 /* FilePersistenceTests.swift */; };
 		0EBC26C8205ADB7B00370431 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EBC26BE205AD7D800370431 /* Result.framework */; };
 		0EBC26C9205ADB8B00370431 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EBC26C0205AD7DB00370431 /* KeychainAccess.framework */; };
 		0EBC26F6205ADDB500370431 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC26F0205ADDB400370431 /* ViewController.swift */; };
@@ -31,6 +29,8 @@
 		0EBC275C20601CD000370431 /* Codable+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC275B20601CD000370431 /* Codable+Default.swift */; };
 		0EBC275E2060209500370431 /* DefaultsContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC275D2060209500370431 /* DefaultsContainerTests.swift */; };
 		0EBC2761206038C700370431 /* KeychainContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC275F2060383C00370431 /* KeychainContainerTests.swift */; };
+		0ED72AC92060442500E8BC91 /* FileContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED72AC72060442200E8BC91 /* FileContainerTests.swift */; };
+		0ED72ACC206052D100E8BC91 /* ContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED72ACA206052CC00E8BC91 /* ContainerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,8 +96,8 @@
 		0EBC275B20601CD000370431 /* Codable+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Default.swift"; sourceTree = "<group>"; };
 		0EBC275D2060209500370431 /* DefaultsContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsContainerTests.swift; sourceTree = "<group>"; };
 		0EBC275F2060383C00370431 /* KeychainContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainContainerTests.swift; sourceTree = "<group>"; };
-		0EF541971FDF2B8B002B0B25 /* DirectoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryTests.swift; sourceTree = "<group>"; };
-		0EF541991FDF2B8B002B0B25 /* FilePersistenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePersistenceTests.swift; sourceTree = "<group>"; };
+		0ED72AC72060442200E8BC91 /* FileContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileContainerTests.swift; sourceTree = "<group>"; };
+		0ED72ACA206052CC00E8BC91 /* ContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,8 +225,8 @@
 			children = (
 				0EBC275D2060209500370431 /* DefaultsContainerTests.swift */,
 				0EBC275F2060383C00370431 /* KeychainContainerTests.swift */,
-				0EF541971FDF2B8B002B0B25 /* DirectoryTests.swift */,
-				0EF541991FDF2B8B002B0B25 /* FilePersistenceTests.swift */,
+				0ED72AC72060442200E8BC91 /* FileContainerTests.swift */,
+				0ED72ACA206052CC00E8BC91 /* ContainerTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -411,8 +411,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EBC275E2060209500370431 /* DefaultsContainerTests.swift in Sources */,
-				0EBC26C2205AD82700370431 /* DirectoryTests.swift in Sources */,
-				0EBC26C3205AD82900370431 /* FilePersistenceTests.swift in Sources */,
+				0ED72ACC206052D100E8BC91 /* ContainerTests.swift in Sources */,
+				0ED72AC92060442500E8BC91 /* FileContainerTests.swift in Sources */,
 				0EBC2761206038C700370431 /* KeychainContainerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
