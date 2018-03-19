@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E91E5D920605B85009625EB /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E91E5DA20605B85009625EB /* KeychainAccess.framework */; };
+		0E91E5DB20605B8A009625EB /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E91E5DC20605B8A009625EB /* Result.framework */; };
 		0EBC26A0205AD48800370431 /* Holocron.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EBC2697205AD48800370431 /* Holocron.framework */; };
 		0EBC26A7205AD48800370431 /* Holocron.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EBC2699205AD48800370431 /* Holocron.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0EBC26C8205ADB7B00370431 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EBC26BE205AD7D800370431 /* Result.framework */; };
@@ -74,6 +76,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0E91E5DA20605B85009625EB /* KeychainAccess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KeychainAccess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E91E5DC20605B8A009625EB /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EBC2697205AD48800370431 /* Holocron.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Holocron.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EBC2699205AD48800370431 /* Holocron.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Holocron.h; sourceTree = "<group>"; };
 		0EBC269A205AD48800370431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E91E5DB20605B8A009625EB /* Result.framework in Frameworks */,
+				0E91E5D920605B85009625EB /* KeychainAccess.framework in Frameworks */,
 				0EBC26A0205AD48800370431 /* Holocron.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,6 +249,8 @@
 		D1610158F88E118DAC288B5B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0E91E5DC20605B8A009625EB /* Result.framework */,
+				0E91E5DA20605B85009625EB /* KeychainAccess.framework */,
 				0EBC26C0205AD7DB00370431 /* KeychainAccess.framework */,
 				0EBC26BE205AD7D800370431 /* Result.framework */,
 			);
