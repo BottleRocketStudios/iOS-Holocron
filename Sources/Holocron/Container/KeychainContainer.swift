@@ -25,13 +25,26 @@ public struct KeychainContainer: Container {
     private let keychain: Keychain
     
     //MARK: Initializers
+    public init(serviceName: String) {
+        self.init(keychain: Keychain(service: serviceName))
+    }
+    
     public init(keychain: Keychain) {
         self.keychain = keychain
     }
     
     //MARK: Container
+    public func store(_ element: String?, with options: StorageOptions) throws {
+        guard let element = element else { return }
+        return try keychain.set(element, key: options.key)
+    }
+    
     public func store(_ element: Codable, with options: StorageOptions) throws {
         return try keychain.set(element.defaultlyEncoded(), key: options.key)
+    }
+    
+    public func retrieve(with options: StorageOptions) throws -> String? {
+        return keychain[string: options.key]
     }
     
     public func retrieve<T: Codable>(with options: StorageOptions) throws -> T? {

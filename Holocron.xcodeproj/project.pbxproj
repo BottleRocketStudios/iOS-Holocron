@@ -11,8 +11,6 @@
 		0EBC26A7205AD48800370431 /* Holocron.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EBC2699205AD48800370431 /* Holocron.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0EBC26C2205AD82700370431 /* DirectoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF541971FDF2B8B002B0B25 /* DirectoryTests.swift */; };
 		0EBC26C3205AD82900370431 /* FilePersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF541991FDF2B8B002B0B25 /* FilePersistenceTests.swift */; };
-		0EBC26C4205AD82C00370431 /* KeychainPersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5419A1FDF2B8B002B0B25 /* KeychainPersistenceTests.swift */; };
-		0EBC26C5205AD82E00370431 /* UserDefaultsPersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF541981FDF2B8B002B0B25 /* UserDefaultsPersistenceTests.swift */; };
 		0EBC26C8205ADB7B00370431 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EBC26BE205AD7D800370431 /* Result.framework */; };
 		0EBC26C9205ADB8B00370431 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EBC26C0205AD7DB00370431 /* KeychainAccess.framework */; };
 		0EBC26F6205ADDB500370431 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC26F0205ADDB400370431 /* ViewController.swift */; };
@@ -32,6 +30,7 @@
 		0EBC271C205C1C6800370431 /* FileContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC271B205C1C6800370431 /* FileContainer.swift */; };
 		0EBC275C20601CD000370431 /* Codable+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC275B20601CD000370431 /* Codable+Default.swift */; };
 		0EBC275E2060209500370431 /* DefaultsContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC275D2060209500370431 /* DefaultsContainerTests.swift */; };
+		0EBC2761206038C700370431 /* KeychainContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC275F2060383C00370431 /* KeychainContainerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +47,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 0EBC2696205AD48800370431;
 			remoteInfo = "Holocron-iOS";
+		};
+		0ED72AC520603EEB00E8BC91 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0EBC26CD205ADD5300370431;
+			remoteInfo = "Holocron-iOSExample";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -89,10 +95,9 @@
 		0EBC271B205C1C6800370431 /* FileContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileContainer.swift; sourceTree = "<group>"; };
 		0EBC275B20601CD000370431 /* Codable+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Default.swift"; sourceTree = "<group>"; };
 		0EBC275D2060209500370431 /* DefaultsContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsContainerTests.swift; sourceTree = "<group>"; };
+		0EBC275F2060383C00370431 /* KeychainContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainContainerTests.swift; sourceTree = "<group>"; };
 		0EF541971FDF2B8B002B0B25 /* DirectoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryTests.swift; sourceTree = "<group>"; };
-		0EF541981FDF2B8B002B0B25 /* UserDefaultsPersistenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsPersistenceTests.swift; sourceTree = "<group>"; };
 		0EF541991FDF2B8B002B0B25 /* FilePersistenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePersistenceTests.swift; sourceTree = "<group>"; };
-		0EF5419A1FDF2B8B002B0B25 /* KeychainPersistenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPersistenceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,10 +224,9 @@
 			isa = PBXGroup;
 			children = (
 				0EBC275D2060209500370431 /* DefaultsContainerTests.swift */,
+				0EBC275F2060383C00370431 /* KeychainContainerTests.swift */,
 				0EF541971FDF2B8B002B0B25 /* DirectoryTests.swift */,
 				0EF541991FDF2B8B002B0B25 /* FilePersistenceTests.swift */,
-				0EF5419A1FDF2B8B002B0B25 /* KeychainPersistenceTests.swift */,
-				0EF541981FDF2B8B002B0B25 /* UserDefaultsPersistenceTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -289,6 +293,7 @@
 			);
 			dependencies = (
 				0EBC26A2205AD48800370431 /* PBXTargetDependency */,
+				0ED72AC620603EEB00E8BC91 /* PBXTargetDependency */,
 			);
 			name = "Holocron-iOSTests";
 			productName = "Holocron-iOSTests";
@@ -332,6 +337,7 @@
 					0EBC269E205AD48800370431 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						TestTargetID = 0EBC26CD205ADD5300370431;
 					};
 					0EBC26CD205ADD5300370431 = {
 						CreatedOnToolsVersion = 9.2;
@@ -405,10 +411,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EBC275E2060209500370431 /* DefaultsContainerTests.swift in Sources */,
-				0EBC26C5205AD82E00370431 /* UserDefaultsPersistenceTests.swift in Sources */,
 				0EBC26C2205AD82700370431 /* DirectoryTests.swift in Sources */,
 				0EBC26C3205AD82900370431 /* FilePersistenceTests.swift in Sources */,
-				0EBC26C4205AD82C00370431 /* KeychainPersistenceTests.swift in Sources */,
+				0EBC2761206038C700370431 /* KeychainContainerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +438,11 @@
 			isa = PBXTargetDependency;
 			target = 0EBC2696205AD48800370431 /* Holocron-iOS */;
 			targetProxy = 0EBC26FE205ADDC300370431 /* PBXContainerItemProxy */;
+		};
+		0ED72AC620603EEB00E8BC91 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0EBC26CD205ADD5300370431 /* Holocron-iOSExample */;
+			targetProxy = 0ED72AC520603EEB00E8BC91 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -534,6 +544,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Holocron-iOSExample.app/Holocron-iOSExample";
 			};
 			name = Debug;
 		};
@@ -558,6 +569,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Holocron-iOSExample.app/Holocron-iOSExample";
 			};
 			name = Release;
 		};
