@@ -8,14 +8,18 @@
 
 import Foundation
 
+struct Box<T: Codable>: Codable {
+    let element: T
+}
+
 extension Data {
-    func defaultlyDecoded<T: Decodable>() throws -> T {
-        return try JSONDecoder().decode(T.self, from: self)
+    func defaultlyDecoded<T: Codable>() throws -> T {
+        return try JSONDecoder().decode(Box<T>.self, from: self).element
     }
 }
 
-extension Encodable {
+extension Encodable where Self: Decodable {
     func defaultlyEncoded() throws -> Data {
-        return try JSONEncoder().encode(self)
+        return try JSONEncoder().encode(Box(element: self))
     }
 }

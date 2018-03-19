@@ -26,8 +26,58 @@ public extension UserDefaults {
 //MARK: Container
 extension UserDefaults: Container {
     
+    //MARK: Storage
+    public func store(_ element: Int, with options: StorageOptions)  {
+        set(element, forKey: options.key)
+    }
+    
+    public func store(_ element: Double, with options: StorageOptions)  {
+        set(element, forKey: options.key)
+    }
+    
+    public func store(_ element: Float, with options: StorageOptions)  {
+        set(element, forKey: options.key)
+    }
+    
+    public func store(_ element: String, with options: StorageOptions)  {
+        set(element, forKey: options.key)
+    }
+    
+    public func store(_ element: URL, with options: StorageOptions)  {
+        set(element, forKey: options.key)
+    }
+    
+    public func store(_ element: Bool, with options: StorageOptions)  {
+        set(element, forKey: options.key)
+    }
+    
     public func store(_ element: Codable, with options: StorageOptions) throws {
         try set(element.defaultlyEncoded(), forKey: options.key)
+    }
+    
+    //MARK: Retrieval
+    public func retrieve(with options: StorageOptions) -> Int? {
+        return integer(forKey: options.key)
+    }
+    
+    public func retrieve(with options: StorageOptions) -> Double? {
+        return double(forKey: options.key)
+    }
+    
+    public func retrieve(with options: StorageOptions) -> Float? {
+        return float(forKey: options.key)
+    }
+    
+    public func retrieve(with options: StorageOptions) -> String? {
+        return string(forKey: options.key)
+    }
+    
+    public func retrieve(with options: StorageOptions) -> URL? {
+        return url(forKey: options.key)
+    }
+    
+    public func retrieve(with options: StorageOptions) -> Bool? {
+        return bool(forKey: options.key)
     }
     
     public func retrieve<T: Codable>(with options: StorageOptions) throws -> T? {

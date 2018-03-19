@@ -31,6 +31,7 @@
 		0EBC271A205C1C6200370431 /* KeychainContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC2719205C1C6200370431 /* KeychainContainer.swift */; };
 		0EBC271C205C1C6800370431 /* FileContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC271B205C1C6800370431 /* FileContainer.swift */; };
 		0EBC275C20601CD000370431 /* Codable+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC275B20601CD000370431 /* Codable+Default.swift */; };
+		0EBC275E2060209500370431 /* DefaultsContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC275D2060209500370431 /* DefaultsContainerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		0EBC2719205C1C6200370431 /* KeychainContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainContainer.swift; sourceTree = "<group>"; };
 		0EBC271B205C1C6800370431 /* FileContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileContainer.swift; sourceTree = "<group>"; };
 		0EBC275B20601CD000370431 /* Codable+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Default.swift"; sourceTree = "<group>"; };
+		0EBC275D2060209500370431 /* DefaultsContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsContainerTests.swift; sourceTree = "<group>"; };
 		0EF541971FDF2B8B002B0B25 /* DirectoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryTests.swift; sourceTree = "<group>"; };
 		0EF541981FDF2B8B002B0B25 /* UserDefaultsPersistenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsPersistenceTests.swift; sourceTree = "<group>"; };
 		0EF541991FDF2B8B002B0B25 /* FilePersistenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePersistenceTests.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				0EBC275D2060209500370431 /* DefaultsContainerTests.swift */,
 				0EF541971FDF2B8B002B0B25 /* DirectoryTests.swift */,
 				0EF541991FDF2B8B002B0B25 /* FilePersistenceTests.swift */,
 				0EF5419A1FDF2B8B002B0B25 /* KeychainPersistenceTests.swift */,
@@ -401,6 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EBC275E2060209500370431 /* DefaultsContainerTests.swift in Sources */,
 				0EBC26C5205AD82E00370431 /* UserDefaultsPersistenceTests.swift in Sources */,
 				0EBC26C2205AD82700370431 /* DirectoryTests.swift in Sources */,
 				0EBC26C3205AD82900370431 /* FilePersistenceTests.swift in Sources */,
