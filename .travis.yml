@@ -17,8 +17,11 @@ cache:
     - Carthage
 before_install:
   - brew update
-  - brew upgrade swiftlint
+  #- brew upgrade swiftlint
   - carthage bootstrap --verbose --no-use-binaries --platform iOS,tvOS,watchOS --cache-builds
+  - xcrun simctl erase all
+  - killall -9 com.apple.CoreSimulator.CoreSimulatorService
+
 script:
   #- swiftlint
   - set -o pipefail

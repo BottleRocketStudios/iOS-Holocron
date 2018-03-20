@@ -288,6 +288,7 @@
 				0EBC2693205AD48800370431 /* Frameworks */,
 				0EBC2694205AD48800370431 /* Headers */,
 				0EBC2695205AD48800370431 /* Resources */,
+				0E91E5E020617FFE009625EB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -355,6 +356,7 @@
 					0EBC269E205AD48800370431 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						TestTargetID = 0EBC26CD205ADD5300370431;
 					};
 					0EBC26CD205ADD5300370431 = {
 						CreatedOnToolsVersion = 9.2;
@@ -409,6 +411,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E91E5E020617FFE009625EB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
+			);
+			outputPaths = (
+				"$(BUILD_PRODUCTS_DIR)/$(FRAMEWORK_FOLDER_PATH)/Result.framework",
+				"$(BUILD_PRODUCTS_DIR)/$(FRAMEWORK_FOLDER_PATH)/KeychainAccess.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0EBC2692205AD48800370431 /* Sources */ = {
@@ -560,6 +582,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Holocron-iOSExample.app/Holocron-iOSExample";
 			};
 			name = Debug;
 		};
@@ -584,6 +607,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Holocron-iOSExample.app/Holocron-iOSExample";
 			};
 			name = Release;
 		};
