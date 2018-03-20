@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E91E5DE20617A50009625EB /* KeychainAccess.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0EBC26C0205AD7DB00370431 /* KeychainAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0E91E5DF20617A50009625EB /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0EBC26BE205AD7D800370431 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0EBC26A0205AD48800370431 /* Holocron.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EBC2697205AD48800370431 /* Holocron.framework */; };
 		0EBC26A7205AD48800370431 /* Holocron.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EBC2699205AD48800370431 /* Holocron.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0EBC26C8205ADB7B00370431 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EBC26BE205AD7D800370431 /* Result.framework */; };
@@ -58,6 +60,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		0E91E5DD20617A41009625EB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0E91E5DE20617A50009625EB /* KeychainAccess.framework in CopyFiles */,
+				0E91E5DF20617A50009625EB /* Result.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0EBC2700205ADDC300370431 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -292,6 +305,7 @@
 				0EBC269B205AD48800370431 /* Sources */,
 				0EBC269C205AD48800370431 /* Frameworks */,
 				0EBC269D205AD48800370431 /* Resources */,
+				0E91E5DD20617A41009625EB /* CopyFiles */,
 			);
 			buildRules = (
 			);
