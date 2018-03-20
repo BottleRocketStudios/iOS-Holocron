@@ -22,24 +22,24 @@ class ContainerTests: XCTestCase {
         }
     }
     
-    func testContainer_subscriptRetrieval() {
-        let value = Stored(id: 1, title: "title")
-        container["testKey"] = value
-        XCTAssertEqual(value, container["testKey"])
-    }
-    
-    func testContainer_failedSubscriptRetrieval() {
-        let x: Stored? = container["testKey2"]
-        XCTAssertNil(x)
-    }
-    
-    func testContainer_subscriptingNilRemovesObject() {
-        let value = Stored(id: 1, title: "title")
-        container["testKey"] = value
-        XCTAssertEqual(value, container["testKey"])
-        
-        container["testKey"] = Optional<Stored>.none
-        let x: Stored? = container["testKey"]
-        XCTAssertNil(x)
-    }
+//    func testContainer_subscriptRetrieval() {
+//        let value = Stored(id: 1, title: "title")
+//        container["testKey"] = value
+//        XCTAssertEqual(value, container["testKey"])
+//    }
+//    
+//    func testContainer_failedSubscriptRetrieval() {
+//        let x: Stored? = container["testKey2"]
+//        XCTAssertNil(x)
+//    }
+//    
+//    func testContainer_subscriptingNilRemovesObject() {
+//        let value = Stored(id: 1, title: "title")
+//        container["testKey"] = value
+//        XCTAssertEqual(value, container["testKey"])
+//        
+//        container["testKey"] = Optional<Stored>.none
+//        let x: Stored? = container["testKey"]
+//        XCTAssertNil(x)
+//    }
 }
