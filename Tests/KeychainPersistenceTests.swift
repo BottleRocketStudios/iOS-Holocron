@@ -112,22 +112,22 @@ class KeychainPersistenceTests: XCTestCase {
         waitForExpectations(timeout: 1, handler: nil)
     }
     
-    func testRead() {
-        let textExpectation = expectation(description: "testRead")
-        let testString = "This is a test"
-        let keyChainStore = KeychainStore(key: "testKey")
-        try? keychainPersistence.write(object: testString, for: keyChainStore)
-        keychainPersistence.retrieve(object: keyChainStore) { (result: Result<String, StorageError>) in
-            switch result {
-            case .success(let object):
-                XCTAssert(object == "This is a test", "Failed to read string")
-            case .failure(let error):
-                XCTFail("Failed to read string: \(error)")
-            }
-            textExpectation.fulfill()
-        }
-        waitForExpectations(timeout: 1, handler: nil)
-    }
+//    func testRead() {
+//        let textExpectation = expectation(description: "testRead")
+//        let testString = "This is a test"
+//        let keyChainStore = KeychainStore(key: "testKey")
+//        try? keychainPersistence.write(object: testString, for: keyChainStore)
+//        keychainPersistence.retrieve(object: keyChainStore) { (result: Result<String, StorageError>) in
+//            switch result {
+//            case .success(let object):
+//                XCTAssert(object == "This is a test", "Failed to read string")
+//            case .failure(let error):
+//                XCTFail("Failed to read string: \(error)")
+//            }
+//            textExpectation.fulfill()
+//        }
+//        waitForExpectations(timeout: 1, handler: nil)
+//    }
     
     func testRemove() {
         let testExpectation = expectation(description: "testRemove")
