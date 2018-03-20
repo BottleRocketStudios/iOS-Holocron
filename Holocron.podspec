@@ -27,7 +27,7 @@ s.author           = { 'Bottle Rocket Studios' => 'will.mcginty@bottlerocketstud
 s.source           = { :git => 'https://github.com/bottlerocketstudios/iOS-Holocron.git', :tag => s.version.to_s }
 
 s.ios.deployment_target = '8.0'
-s.source_files = 'Holocron/Classes/**/*'
+s.source_files = 'Sources/**/*'
 s.dependency 'Result'
 s.dependency 'KeychainAccess'
 end
