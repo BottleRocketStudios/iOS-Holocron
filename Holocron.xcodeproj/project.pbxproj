@@ -1,0 +1,684 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E96E0802061A18D0013892D /* Holocron.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E96E0772061A18D0013892D /* Holocron.framework */; };
+		0E96E0BC2061A2580013892D /* Holocron.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E96E0BA2061A2580013892D /* Holocron.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0E96E0C32061A2B60013892D /* DirectoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0BF2061A2B60013892D /* DirectoryTests.swift */; };
+		0E96E0C42061A2B60013892D /* FilePersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0C02061A2B60013892D /* FilePersistenceTests.swift */; };
+		0E96E0C52061A2B60013892D /* KeychainPersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0C12061A2B60013892D /* KeychainPersistenceTests.swift */; };
+		0E96E0C62061A2B60013892D /* UserDefaultsPersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0C22061A2B60013892D /* UserDefaultsPersistenceTests.swift */; };
+		0E96E0D92061A5600013892D /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E96E0DA2061A5600013892D /* KeychainAccess.framework */; };
+		0E96E0DB2061A5670013892D /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E96E0DC2061A5670013892D /* Result.framework */; };
+		0E96E0E12061A5DC0013892D /* KeychainPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0DD2061A5DC0013892D /* KeychainPersistence.swift */; };
+		0E96E0E22061A5DC0013892D /* FilePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0DE2061A5DC0013892D /* FilePersistence.swift */; };
+		0E96E0E32061A5DC0013892D /* StorageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0DF2061A5DC0013892D /* StorageContainer.swift */; };
+		0E96E0E42061A5DC0013892D /* UserDefaultsPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0E02061A5DC0013892D /* UserDefaultsPersistence.swift */; };
+		0E96E0EC2061A61B0013892D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E96E0E72061A61A0013892D /* Images.xcassets */; };
+		0E96E0ED2061A61B0013892D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E96E0E82061A61B0013892D /* Info.plist */; };
+		0E96E0EE2061A61B0013892D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0E92061A61B0013892D /* ViewController.swift */; };
+		0E96E0EF2061A61B0013892D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0EA2061A61B0013892D /* AppDelegate.swift */; };
+		0E96E0F22061A69A0013892D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E96E0F02061A66F0013892D /* Main.storyboard */; };
+		0E96E0F32061A6A10013892D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E96E0F12061A66F0013892D /* LaunchScreen.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0E96E0812061A18D0013892D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E96E0762061A18D0013892D;
+			remoteInfo = "Holocron-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0E96E0772061A18D0013892D /* Holocron.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Holocron.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E96E07F2061A18D0013892D /* Holocron-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Holocron-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E96E0A82061A2000013892D /* Holocron-iOSExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Holocron-iOSExample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E96E0BA2061A2580013892D /* Holocron.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Holocron.h; sourceTree = "<group>"; };
+		0E96E0BB2061A2580013892D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E96E0BF2061A2B60013892D /* DirectoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryTests.swift; sourceTree = "<group>"; };
+		0E96E0C02061A2B60013892D /* FilePersistenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePersistenceTests.swift; sourceTree = "<group>"; };
+		0E96E0C12061A2B60013892D /* KeychainPersistenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPersistenceTests.swift; sourceTree = "<group>"; };
+		0E96E0C22061A2B60013892D /* UserDefaultsPersistenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsPersistenceTests.swift; sourceTree = "<group>"; };
+		0E96E0D82061A53F0013892D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E96E0DA2061A5600013892D /* KeychainAccess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KeychainAccess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E96E0DC2061A5670013892D /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E96E0DD2061A5DC0013892D /* KeychainPersistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPersistence.swift; sourceTree = "<group>"; };
+		0E96E0DE2061A5DC0013892D /* FilePersistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePersistence.swift; sourceTree = "<group>"; };
+		0E96E0DF2061A5DC0013892D /* StorageContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageContainer.swift; sourceTree = "<group>"; };
+		0E96E0E02061A5DC0013892D /* UserDefaultsPersistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsPersistence.swift; sourceTree = "<group>"; };
+		0E96E0E72061A61A0013892D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0E96E0E82061A61B0013892D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E96E0E92061A61B0013892D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0E96E0EA2061A61B0013892D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0E96E0F02061A66F0013892D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		0E96E0F12061A66F0013892D /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0E96E0732061A18D0013892D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E96E0DB2061A5670013892D /* Result.framework in Frameworks */,
+				0E96E0D92061A5600013892D /* KeychainAccess.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E96E07C2061A18D0013892D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E96E0802061A18D0013892D /* Holocron.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E96E0A52061A2000013892D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E4AE2B22061A0ED00361032 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				0E4AE2B42061A11100361032 /* Holocron */,
+				0E4AE2B52061A11700361032 /* Supporting Files */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		0E4AE2B32061A10200361032 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				0E96E0E52061A6020013892D /* Holocron-iOSExample */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
+		0E4AE2B42061A11100361032 /* Holocron */ = {
+			isa = PBXGroup;
+			children = (
+				0E96E0DE2061A5DC0013892D /* FilePersistence.swift */,
+				0E96E0DD2061A5DC0013892D /* KeychainPersistence.swift */,
+				0E96E0DF2061A5DC0013892D /* StorageContainer.swift */,
+				0E96E0E02061A5DC0013892D /* UserDefaultsPersistence.swift */,
+			);
+			path = Holocron;
+			sourceTree = "<group>";
+		};
+		0E4AE2B52061A11700361032 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0E96E0BA2061A2580013892D /* Holocron.h */,
+				0E96E0BB2061A2580013892D /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0E96E0D62061A5130013892D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0E96E0D82061A53F0013892D /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0E96E0E52061A6020013892D /* Holocron-iOSExample */ = {
+			isa = PBXGroup;
+			children = (
+				0E96E0EA2061A61B0013892D /* AppDelegate.swift */,
+				0E96E0F12061A66F0013892D /* LaunchScreen.xib */,
+				0E96E0F02061A66F0013892D /* Main.storyboard */,
+				0E96E0E72061A61A0013892D /* Images.xcassets */,
+				0E96E0E82061A61B0013892D /* Info.plist */,
+				0E96E0E92061A61B0013892D /* ViewController.swift */,
+			);
+			path = "Holocron-iOSExample";
+			sourceTree = "<group>";
+		};
+		607FACC71AFB9204008FA782 = {
+			isa = PBXGroup;
+			children = (
+				0E4AE2B32061A10200361032 /* Examples */,
+				0E4AE2B22061A0ED00361032 /* Sources */,
+				607FACE81AFB9204008FA782 /* Tests */,
+				607FACD11AFB9204008FA782 /* Products */,
+				D1610158F88E118DAC288B5B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		607FACD11AFB9204008FA782 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0E96E0772061A18D0013892D /* Holocron.framework */,
+				0E96E07F2061A18D0013892D /* Holocron-iOSTests.xctest */,
+				0E96E0A82061A2000013892D /* Holocron-iOSExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		607FACE81AFB9204008FA782 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0E96E0D62061A5130013892D /* Supporting Files */,
+				0E96E0BF2061A2B60013892D /* DirectoryTests.swift */,
+				0E96E0C02061A2B60013892D /* FilePersistenceTests.swift */,
+				0E96E0C12061A2B60013892D /* KeychainPersistenceTests.swift */,
+				0E96E0C22061A2B60013892D /* UserDefaultsPersistenceTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		D1610158F88E118DAC288B5B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E96E0DC2061A5670013892D /* Result.framework */,
+				0E96E0DA2061A5600013892D /* KeychainAccess.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0E96E0742061A18D0013892D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E96E0BC2061A2580013892D /* Holocron.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0E96E0762061A18D0013892D /* Holocron-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E96E0882061A18D0013892D /* Build configuration list for PBXNativeTarget "Holocron-iOS" */;
+			buildPhases = (
+				0E96E0722061A18D0013892D /* Sources */,
+				0E96E0732061A18D0013892D /* Frameworks */,
+				0E96E0742061A18D0013892D /* Headers */,
+				0E96E0752061A18D0013892D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Holocron-iOS";
+			productName = "Holocron-iOS";
+			productReference = 0E96E0772061A18D0013892D /* Holocron.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		0E96E07E2061A18D0013892D /* Holocron-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E96E08B2061A18D0013892D /* Build configuration list for PBXNativeTarget "Holocron-iOSTests" */;
+			buildPhases = (
+				0E96E07B2061A18D0013892D /* Sources */,
+				0E96E07C2061A18D0013892D /* Frameworks */,
+				0E96E07D2061A18D0013892D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0E96E0822061A18D0013892D /* PBXTargetDependency */,
+			);
+			name = "Holocron-iOSTests";
+			productName = "Holocron-iOSTests";
+			productReference = 0E96E07F2061A18D0013892D /* Holocron-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0E96E0A72061A2000013892D /* Holocron-iOSExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E96E0B72061A2000013892D /* Build configuration list for PBXNativeTarget "Holocron-iOSExample" */;
+			buildPhases = (
+				0E96E0A42061A2000013892D /* Sources */,
+				0E96E0A52061A2000013892D /* Frameworks */,
+				0E96E0A62061A2000013892D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Holocron-iOSExample";
+			productName = "Holocron-iOSExample";
+			productReference = 0E96E0A82061A2000013892D /* Holocron-iOSExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		607FACC81AFB9204008FA782 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = CocoaPods;
+				TargetAttributes = {
+					0E96E0762061A18D0013892D = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
+					0E96E07E2061A18D0013892D = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
+					0E96E0A72061A2000013892D = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "Holocron" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 607FACC71AFB9204008FA782;
+			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0E96E0762061A18D0013892D /* Holocron-iOS */,
+				0E96E07E2061A18D0013892D /* Holocron-iOSTests */,
+				0E96E0A72061A2000013892D /* Holocron-iOSExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0E96E0752061A18D0013892D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E96E07D2061A18D0013892D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E96E0A62061A2000013892D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E96E0F32061A6A10013892D /* LaunchScreen.xib in Resources */,
+				0E96E0F22061A69A0013892D /* Main.storyboard in Resources */,
+				0E96E0EC2061A61B0013892D /* Images.xcassets in Resources */,
+				0E96E0ED2061A61B0013892D /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0E96E0722061A18D0013892D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E96E0E42061A5DC0013892D /* UserDefaultsPersistence.swift in Sources */,
+				0E96E0E12061A5DC0013892D /* KeychainPersistence.swift in Sources */,
+				0E96E0E22061A5DC0013892D /* FilePersistence.swift in Sources */,
+				0E96E0E32061A5DC0013892D /* StorageContainer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E96E07B2061A18D0013892D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E96E0C62061A2B60013892D /* UserDefaultsPersistenceTests.swift in Sources */,
+				0E96E0C32061A2B60013892D /* DirectoryTests.swift in Sources */,
+				0E96E0C42061A2B60013892D /* FilePersistenceTests.swift in Sources */,
+				0E96E0C52061A2B60013892D /* KeychainPersistenceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E96E0A42061A2000013892D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E96E0EF2061A61B0013892D /* AppDelegate.swift in Sources */,
+				0E96E0EE2061A61B0013892D /* ViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0E96E0822061A18D0013892D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E96E0762061A18D0013892D /* Holocron-iOS */;
+			targetProxy = 0E96E0812061A18D0013892D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0E96E0892061A18D0013892D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Sources/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bottlerocketstudios.Holocron-iOS";
+				PRODUCT_NAME = Holocron;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0E96E08A2061A18D0013892D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Sources/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bottlerocketstudios.Holocron-iOS";
+				PRODUCT_NAME = Holocron;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		0E96E08C2061A18D0013892D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bottlerocketstudios.Holocron-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0E96E08D2061A18D0013892D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bottlerocketstudios.Holocron-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0E96E0B82061A2000013892D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Examples/Holocron-iOSExample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bottlerocketstudios.Holocron-iOSExample";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0E96E0B92061A2000013892D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Examples/Holocron-iOSExample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bottlerocketstudios.Holocron-iOSExample";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		607FACED1AFB9204008FA782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		607FACEE1AFB9204008FA782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0E96E0882061A18D0013892D /* Build configuration list for PBXNativeTarget "Holocron-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E96E0892061A18D0013892D /* Debug */,
+				0E96E08A2061A18D0013892D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E96E08B2061A18D0013892D /* Build configuration list for PBXNativeTarget "Holocron-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E96E08C2061A18D0013892D /* Debug */,
+				0E96E08D2061A18D0013892D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E96E0B72061A2000013892D /* Build configuration list for PBXNativeTarget "Holocron-iOSExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E96E0B82061A2000013892D /* Debug */,
+				0E96E0B92061A2000013892D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "Holocron" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				607FACED1AFB9204008FA782 /* Debug */,
+				607FACEE1AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 607FACC81AFB9204008FA782 /* Project object */;
+}
