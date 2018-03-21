@@ -34,6 +34,8 @@
 		0E96E1032062C3BD0013892D /* ContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0FF2062C3BD0013892D /* ContainerTests.swift */; };
 		0E96E1042062C3BD0013892D /* DefaultsContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E1002062C3BD0013892D /* DefaultsContainerTests.swift */; };
 		0E96E1052062C3BD0013892D /* FileContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E1012062C3BD0013892D /* FileContainerTests.swift */; };
+		0E96E1082062C9020013892D /* Holocron.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E96E0772061A18D0013892D /* Holocron.framework */; };
+		0E96E1092062C9020013892D /* Holocron.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0E96E0772061A18D0013892D /* Holocron.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +53,28 @@
 			remoteGlobalIDString = 0E96E0A72061A2000013892D;
 			remoteInfo = "Holocron-iOSExample";
 		};
+		0E96E10A2062C9020013892D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E96E0762061A18D0013892D;
+			remoteInfo = "Holocron-iOS";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0E96E10C2062C9020013892D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0E96E1092062C9020013892D /* Holocron.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0E96E0772061A18D0013892D /* Holocron.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Holocron.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E96E1082062C9020013892D /* Holocron.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,10 +306,12 @@
 				0E96E0A42061A2000013892D /* Sources */,
 				0E96E0A52061A2000013892D /* Frameworks */,
 				0E96E0A62061A2000013892D /* Resources */,
+				0E96E10C2062C9020013892D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0E96E10B2062C9020013892D /* PBXTargetDependency */,
 			);
 			name = "Holocron-iOSExample";
 			productName = "Holocron-iOSExample";
@@ -422,6 +448,11 @@
 			target = 0E96E0A72061A2000013892D /* Holocron-iOSExample */;
 			targetProxy = 0E96E1062062C4110013892D /* PBXContainerItemProxy */;
 		};
+		0E96E10B2062C9020013892D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E96E0762061A18D0013892D /* Holocron-iOS */;
+			targetProxy = 0E96E10A2062C9020013892D /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -546,6 +577,7 @@
 		0E96E0B82061A2000013892D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -572,6 +604,7 @@
 		0E96E0B92061A2000013892D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
