@@ -1,6 +1,6 @@
 //
-//  UserDefaultsWriterTests.swift
-//  Data PersistenceTests
+//  KeychainWriterTests.swift
+//  HolocronTests
 //
 //  
 //  Copyright © 2017 Bottle Rocket. All rights reserved.
@@ -10,18 +10,18 @@ import XCTest
 import Result
 @testable import Holocron
 
-class UserDefaultsPersistenceTests: XCTestCase {
+class KeychainPersistenceTests: XCTestCase {
     
-    var userDefaultsPersistence: UserDefaultsPersistence!
+    var keychainPersistence: KeychainPersistence!
     
     override func setUp() {
-        userDefaultsPersistence = UserDefaultsPersistence()
+        keychainPersistence =  KeychainPersistence(keychainServiceName: "com.holocron.test")
     }
     
     func testString() {
         let textExpectation = expectation(description: "testString")
-        let userDefaultsStore = UserDefaultsStore(key: "testKey")
-        userDefaultsPersistence.write(object: "Write This String", for: userDefaultsStore) { (result) in
+        let keyChainStore = KeychainStore(key: "testKey")
+        keychainPersistence.write(object: "Write This String", for: keyChainStore) { (result) in
             switch result {
             case .success(let object):
                 XCTAssert(object == "Write This String", "Failed to write string")
@@ -31,18 +31,17 @@ class UserDefaultsPersistenceTests: XCTestCase {
             textExpectation.fulfill()
         }
         waitForExpectations(timeout: 1, handler: nil)
-        
     }
     
-    func testInteger() {
+    func testInt() {
         let textExpectation = expectation(description: "testInteger")
-        let userDefaultsStore = UserDefaultsStore(key: "testKey")
-        userDefaultsPersistence.write(object: 12345, for: userDefaultsStore) { (result) in
+        let keyChainStore = KeychainStore(key: "testKey")
+        keychainPersistence.write(object: 12345, for: keyChainStore) { (result) in
             switch result {
             case .success(let object):
-                XCTAssert(object == 12345, "Failed to write int")
+                XCTAssert(object == 12345, "Failed to write Int")
             case .failure(let error):
-                 XCTFail("Failed to write int: \(error)")
+                XCTFail("Failed to write Int: \(error)")
             }
             textExpectation.fulfill()
         }
@@ -51,8 +50,8 @@ class UserDefaultsPersistenceTests: XCTestCase {
     
     func testBool() {
         let textExpectation = expectation(description: "testBool")
-        let userDefaultsStore = UserDefaultsStore(key: "testKey")
-        userDefaultsPersistence.write(object: true, for: userDefaultsStore) { (result) in
+        let keyChainStore = KeychainStore(key: "testKey")
+        keychainPersistence.write(object: true, for: keyChainStore) { (result) in
             switch result {
             case .success(let object):
                 XCTAssert(object == true, "Failed to write Bool")
@@ -66,13 +65,13 @@ class UserDefaultsPersistenceTests: XCTestCase {
     
     func testDouble() {
         let textExpectation = expectation(description: "testDouble")
-        let userDefaultsStore = UserDefaultsStore(key: "testKey")
-        userDefaultsPersistence.write(object: 12345.0, for: userDefaultsStore) { (result) in
+        let keyChainStore = KeychainStore(key: "testKey")
+        keychainPersistence.write(object: 12345.0, for: keyChainStore) { (result) in
             switch result {
             case .success(let object):
                 XCTAssert(object == 12345.0, "Failed to write Double")
             case .failure(let error):
-                XCTFail("Failed to write Double: \(error)")
+                XCTFail("Failed to write double: \(error)")
             }
             textExpectation.fulfill()
         }
@@ -81,42 +80,61 @@ class UserDefaultsPersistenceTests: XCTestCase {
     
     func testFloat() {
         let textExpectation = expectation(description: "testFloat")
-        let userDefaultsStore = UserDefaultsStore(key: "testKey")
-        userDefaultsPersistence.write(object: 12345.0, for: userDefaultsStore) { (result) in
+        let keyChainStore = KeychainStore(key: "testKey")
+        keychainPersistence.write(object: 12345.0, for: keyChainStore) { (result) in
             switch result {
             case .success(let object):
-                XCTAssert(object == 12345.0, "Failed to write Float")
+                XCTAssert(object == 12345.0, "Failed to write float")
             case .failure(let error):
-                XCTFail("Failed to write Float: \(error)")
+                XCTFail("Failed to write float: \(error)")
             }
             textExpectation.fulfill()
         }
         waitForExpectations(timeout: 1, handler: nil)
     }
     
-    func testRead() {
-        let textExpectation = expectation(description: "testRead")
-        let testString = "This is a test"
-        let userDefaultsStore = UserDefaultsStore(key: "testKey")
-        try? userDefaultsPersistence.write(object: testString, for: userDefaultsStore)
-        userDefaultsPersistence.retrieve(object: userDefaultsStore) { (result: Result<String, StorageError>) in
+    func testData() {
+        guard let data = "Hello!".data(using: .utf8) else {
+            XCTFail("Failed to encode string to data")
+            return
+        }
+        let textExpectation = expectation(description: "testData")
+        let keyChainStore = KeychainStore(key: "testKey")
+        keychainPersistence.write(object: data, for: keyChainStore) { (result) in
             switch result {
             case .success(let object):
-                XCTAssert(object == "This is a test", "Failed to read string")
+                XCTAssert(object == data, "Failed to write data")
             case .failure(let error):
-                XCTFail("Failed to read string: \(error)")
+                XCTFail("Failed to write data: \(error)")
             }
             textExpectation.fulfill()
         }
         waitForExpectations(timeout: 1, handler: nil)
     }
+    
+//    func testRead() {
+//        let textExpectation = expectation(description: "testRead")
+//        let testString = "This is a test"
+//        let keyChainStore = KeychainStore(key: "testKey")
+//        try? keychainPersistence.write(object: testString, for: keyChainStore)
+//        keychainPersistence.retrieve(object: keyChainStore) { (result: Result<String, StorageError>) in
+//            switch result {
+//            case .success(let object):
+//                XCTAssert(object == "This is a test", "Failed to read string")
+//            case .failure(let error):
+//                XCTFail("Failed to read string: \(error)")
+//            }
+//            textExpectation.fulfill()
+//        }
+//        waitForExpectations(timeout: 1, handler: nil)
+//    }
     
     func testRemove() {
         let testExpectation = expectation(description: "testRemove")
         let testString = "This is a test"
-        let userDefaultsStore = UserDefaultsStore(key: "testKey")
-        try? userDefaultsPersistence.write(object: testString, for: userDefaultsStore)
-        userDefaultsPersistence.removeObject(for: userDefaultsStore) { (result: Result<Bool, StorageError>) in
+        let keyChainStore = KeychainStore(key: "testKey")
+        try? keychainPersistence.write(object: testString, for: keyChainStore)
+        keychainPersistence.removeObject(for: keyChainStore) { (result: Result<Bool, StorageError>) in
             switch result {
             case .success(let object):
                 XCTAssert(object == true, "Failed to remove string")
