@@ -25,6 +25,15 @@
 		0E96E0EF2061A61B0013892D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0EA2061A61B0013892D /* AppDelegate.swift */; };
 		0E96E0F22061A69A0013892D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E96E0F02061A66F0013892D /* Main.storyboard */; };
 		0E96E0F32061A6A10013892D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E96E0F12061A66F0013892D /* LaunchScreen.xib */; };
+		0E96E0F92062C3A20013892D /* FileContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0F42062C3A10013892D /* FileContainer.swift */; };
+		0E96E0FA2062C3A20013892D /* KeychainContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0F52062C3A10013892D /* KeychainContainer.swift */; };
+		0E96E0FB2062C3A20013892D /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0F62062C3A20013892D /* Container.swift */; };
+		0E96E0FC2062C3A20013892D /* Codable+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0F72062C3A20013892D /* Codable+Default.swift */; };
+		0E96E0FD2062C3A20013892D /* Defaults+Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0F82062C3A20013892D /* Defaults+Container.swift */; };
+		0E96E1022062C3BD0013892D /* KeychainContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0FE2062C3BC0013892D /* KeychainContainerTests.swift */; };
+		0E96E1032062C3BD0013892D /* ContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0FF2062C3BD0013892D /* ContainerTests.swift */; };
+		0E96E1042062C3BD0013892D /* DefaultsContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E1002062C3BD0013892D /* DefaultsContainerTests.swift */; };
+		0E96E1052062C3BD0013892D /* FileContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E1012062C3BD0013892D /* FileContainerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +43,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 0E96E0762061A18D0013892D;
 			remoteInfo = "Holocron-iOS";
+		};
+		0E96E1062062C4110013892D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E96E0A72061A2000013892D;
+			remoteInfo = "Holocron-iOSExample";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -60,6 +76,15 @@
 		0E96E0EA2061A61B0013892D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E96E0F02061A66F0013892D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		0E96E0F12061A66F0013892D /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		0E96E0F42062C3A10013892D /* FileContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileContainer.swift; sourceTree = "<group>"; };
+		0E96E0F52062C3A10013892D /* KeychainContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainContainer.swift; sourceTree = "<group>"; };
+		0E96E0F62062C3A20013892D /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		0E96E0F72062C3A20013892D /* Codable+Default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Codable+Default.swift"; sourceTree = "<group>"; };
+		0E96E0F82062C3A20013892D /* Defaults+Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Defaults+Container.swift"; sourceTree = "<group>"; };
+		0E96E0FE2062C3BC0013892D /* KeychainContainerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainContainerTests.swift; sourceTree = "<group>"; };
+		0E96E0FF2062C3BD0013892D /* ContainerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerTests.swift; sourceTree = "<group>"; };
+		0E96E1002062C3BD0013892D /* DefaultsContainerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultsContainerTests.swift; sourceTree = "<group>"; };
+		0E96E1012062C3BD0013892D /* FileContainerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileContainerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +135,11 @@
 		0E4AE2B42061A11100361032 /* Holocron */ = {
 			isa = PBXGroup;
 			children = (
+				0E96E0F72062C3A20013892D /* Codable+Default.swift */,
+				0E96E0F62062C3A20013892D /* Container.swift */,
+				0E96E0F82062C3A20013892D /* Defaults+Container.swift */,
+				0E96E0F42062C3A10013892D /* FileContainer.swift */,
+				0E96E0F52062C3A10013892D /* KeychainContainer.swift */,
 				0E96E0DE2061A5DC0013892D /* FilePersistence.swift */,
 				0E96E0DD2061A5DC0013892D /* KeychainPersistence.swift */,
 				0E96E0DF2061A5DC0013892D /* StorageContainer.swift */,
@@ -177,6 +207,10 @@
 				0E96E0C02061A2B60013892D /* FilePersistenceTests.swift */,
 				0E96E0C12061A2B60013892D /* KeychainPersistenceTests.swift */,
 				0E96E0C22061A2B60013892D /* UserDefaultsPersistenceTests.swift */,
+				0E96E0FF2062C3BD0013892D /* ContainerTests.swift */,
+				0E96E1002062C3BD0013892D /* DefaultsContainerTests.swift */,
+				0E96E1012062C3BD0013892D /* FileContainerTests.swift */,
+				0E96E0FE2062C3BC0013892D /* KeychainContainerTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -234,6 +268,7 @@
 			);
 			dependencies = (
 				0E96E0822061A18D0013892D /* PBXTargetDependency */,
+				0E96E1072062C4110013892D /* PBXTargetDependency */,
 			);
 			name = "Holocron-iOSTests";
 			productName = "Holocron-iOSTests";
@@ -276,6 +311,7 @@
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
+						TestTargetID = 0E96E0A72061A2000013892D;
 					};
 					0E96E0A72061A2000013892D = {
 						CreatedOnToolsVersion = 9.2;
@@ -338,8 +374,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E96E0E42061A5DC0013892D /* UserDefaultsPersistence.swift in Sources */,
+				0E96E0FD2062C3A20013892D /* Defaults+Container.swift in Sources */,
+				0E96E0FA2062C3A20013892D /* KeychainContainer.swift in Sources */,
+				0E96E0FC2062C3A20013892D /* Codable+Default.swift in Sources */,
 				0E96E0E12061A5DC0013892D /* KeychainPersistence.swift in Sources */,
 				0E96E0E22061A5DC0013892D /* FilePersistence.swift in Sources */,
+				0E96E0FB2062C3A20013892D /* Container.swift in Sources */,
+				0E96E0F92062C3A20013892D /* FileContainer.swift in Sources */,
 				0E96E0E32061A5DC0013892D /* StorageContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,9 +390,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E96E0C62061A2B60013892D /* UserDefaultsPersistenceTests.swift in Sources */,
+				0E96E1052062C3BD0013892D /* FileContainerTests.swift in Sources */,
+				0E96E1022062C3BD0013892D /* KeychainContainerTests.swift in Sources */,
 				0E96E0C32061A2B60013892D /* DirectoryTests.swift in Sources */,
+				0E96E1032062C3BD0013892D /* ContainerTests.swift in Sources */,
 				0E96E0C42061A2B60013892D /* FilePersistenceTests.swift in Sources */,
 				0E96E0C52061A2B60013892D /* KeychainPersistenceTests.swift in Sources */,
+				0E96E1042062C3BD0013892D /* DefaultsContainerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +416,11 @@
 			isa = PBXTargetDependency;
 			target = 0E96E0762061A18D0013892D /* Holocron-iOS */;
 			targetProxy = 0E96E0812061A18D0013892D /* PBXContainerItemProxy */;
+		};
+		0E96E1072062C4110013892D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E96E0A72061A2000013892D /* Holocron-iOSExample */;
+			targetProxy = 0E96E1062062C4110013892D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -465,6 +515,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Holocron-iOSExample.app/Holocron-iOSExample";
 			};
 			name = Debug;
 		};
@@ -488,6 +539,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Holocron-iOSExample.app/Holocron-iOSExample";
 			};
 			name = Release;
 		};
