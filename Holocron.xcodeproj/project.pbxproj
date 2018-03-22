@@ -9,8 +9,16 @@
 /* Begin PBXBuildFile section */
 		0E96E0802061A18D0013892D /* Holocron.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E96E0772061A18D0013892D /* Holocron.framework */; };
 		0E96E0BC2061A2580013892D /* Holocron.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E96E0BA2061A2580013892D /* Holocron.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0E96E0C32061A2B60013892D /* DirectoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0BF2061A2B60013892D /* DirectoryTests.swift */; };
+		0E96E0C42061A2B60013892D /* FilePersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0C02061A2B60013892D /* FilePersistenceTests.swift */; };
+		0E96E0C52061A2B60013892D /* KeychainPersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0C12061A2B60013892D /* KeychainPersistenceTests.swift */; };
+		0E96E0C62061A2B60013892D /* UserDefaultsPersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0C22061A2B60013892D /* UserDefaultsPersistenceTests.swift */; };
 		0E96E0D92061A5600013892D /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E96E0DA2061A5600013892D /* KeychainAccess.framework */; };
 		0E96E0DB2061A5670013892D /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E96E0DC2061A5670013892D /* Result.framework */; };
+		0E96E0E12061A5DC0013892D /* KeychainPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0DD2061A5DC0013892D /* KeychainPersistence.swift */; };
+		0E96E0E22061A5DC0013892D /* FilePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0DE2061A5DC0013892D /* FilePersistence.swift */; };
+		0E96E0E32061A5DC0013892D /* StorageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0DF2061A5DC0013892D /* StorageContainer.swift */; };
+		0E96E0E42061A5DC0013892D /* UserDefaultsPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0E02061A5DC0013892D /* UserDefaultsPersistence.swift */; };
 		0E96E0EC2061A61B0013892D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E96E0E72061A61A0013892D /* Images.xcassets */; };
 		0E96E0ED2061A61B0013892D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E96E0E82061A61B0013892D /* Info.plist */; };
 		0E96E0EE2061A61B0013892D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0E92061A61B0013892D /* ViewController.swift */; };
@@ -22,12 +30,12 @@
 		0E96E0FB2062C3A20013892D /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0F62062C3A20013892D /* Container.swift */; };
 		0E96E0FC2062C3A20013892D /* Codable+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0F72062C3A20013892D /* Codable+Default.swift */; };
 		0E96E0FD2062C3A20013892D /* Defaults+Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0F82062C3A20013892D /* Defaults+Container.swift */; };
+		0E96E1022062C3BD0013892D /* KeychainContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0FE2062C3BC0013892D /* KeychainContainerTests.swift */; };
 		0E96E1032062C3BD0013892D /* ContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0FF2062C3BD0013892D /* ContainerTests.swift */; };
+		0E96E1042062C3BD0013892D /* DefaultsContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E1002062C3BD0013892D /* DefaultsContainerTests.swift */; };
+		0E96E1052062C3BD0013892D /* FileContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E1012062C3BD0013892D /* FileContainerTests.swift */; };
 		0E96E1082062C9020013892D /* Holocron.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E96E0772061A18D0013892D /* Holocron.framework */; };
 		0E96E1092062C9020013892D /* Holocron.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0E96E0772061A18D0013892D /* Holocron.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0E96E10E206409640013892D /* DefaultsContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E10D206409640013892D /* DefaultsContainerTests.swift */; };
-		0E96E1112064097D0013892D /* FileContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E10F2064097C0013892D /* FileContainerTests.swift */; };
-		0E96E1122064097D0013892D /* KeychainContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E1102064097D0013892D /* KeychainContainerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,9 +82,17 @@
 		0E96E0A82061A2000013892D /* Holocron-iOSExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Holocron-iOSExample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E96E0BA2061A2580013892D /* Holocron.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Holocron.h; sourceTree = "<group>"; };
 		0E96E0BB2061A2580013892D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E96E0BF2061A2B60013892D /* DirectoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryTests.swift; sourceTree = "<group>"; };
+		0E96E0C02061A2B60013892D /* FilePersistenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePersistenceTests.swift; sourceTree = "<group>"; };
+		0E96E0C12061A2B60013892D /* KeychainPersistenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPersistenceTests.swift; sourceTree = "<group>"; };
+		0E96E0C22061A2B60013892D /* UserDefaultsPersistenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsPersistenceTests.swift; sourceTree = "<group>"; };
 		0E96E0D82061A53F0013892D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E96E0DA2061A5600013892D /* KeychainAccess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KeychainAccess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E96E0DC2061A5670013892D /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E96E0DD2061A5DC0013892D /* KeychainPersistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPersistence.swift; sourceTree = "<group>"; };
+		0E96E0DE2061A5DC0013892D /* FilePersistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePersistence.swift; sourceTree = "<group>"; };
+		0E96E0DF2061A5DC0013892D /* StorageContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageContainer.swift; sourceTree = "<group>"; };
+		0E96E0E02061A5DC0013892D /* UserDefaultsPersistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsPersistence.swift; sourceTree = "<group>"; };
 		0E96E0E72061A61A0013892D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0E96E0E82061A61B0013892D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E96E0E92061A61B0013892D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,10 +104,10 @@
 		0E96E0F62062C3A20013892D /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		0E96E0F72062C3A20013892D /* Codable+Default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Codable+Default.swift"; sourceTree = "<group>"; };
 		0E96E0F82062C3A20013892D /* Defaults+Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Defaults+Container.swift"; sourceTree = "<group>"; };
+		0E96E0FE2062C3BC0013892D /* KeychainContainerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainContainerTests.swift; sourceTree = "<group>"; };
 		0E96E0FF2062C3BD0013892D /* ContainerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerTests.swift; sourceTree = "<group>"; };
-		0E96E10D206409640013892D /* DefaultsContainerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultsContainerTests.swift; sourceTree = "<group>"; };
-		0E96E10F2064097C0013892D /* FileContainerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileContainerTests.swift; sourceTree = "<group>"; };
-		0E96E1102064097D0013892D /* KeychainContainerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainContainerTests.swift; sourceTree = "<group>"; };
+		0E96E1002062C3BD0013892D /* DefaultsContainerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultsContainerTests.swift; sourceTree = "<group>"; };
+		0E96E1012062C3BD0013892D /* FileContainerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileContainerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,8 +162,12 @@
 				0E96E0F72062C3A20013892D /* Codable+Default.swift */,
 				0E96E0F62062C3A20013892D /* Container.swift */,
 				0E96E0F82062C3A20013892D /* Defaults+Container.swift */,
-				0E96E0F52062C3A10013892D /* KeychainContainer.swift */,
 				0E96E0F42062C3A10013892D /* FileContainer.swift */,
+				0E96E0F52062C3A10013892D /* KeychainContainer.swift */,
+				0E96E0DE2061A5DC0013892D /* FilePersistence.swift */,
+				0E96E0DD2061A5DC0013892D /* KeychainPersistence.swift */,
+				0E96E0DF2061A5DC0013892D /* StorageContainer.swift */,
+				0E96E0E02061A5DC0013892D /* UserDefaultsPersistence.swift */,
 			);
 			path = Holocron;
 			sourceTree = "<group>";
@@ -207,10 +227,14 @@
 			isa = PBXGroup;
 			children = (
 				0E96E0D62061A5130013892D /* Supporting Files */,
+				0E96E0BF2061A2B60013892D /* DirectoryTests.swift */,
+				0E96E0C02061A2B60013892D /* FilePersistenceTests.swift */,
+				0E96E0C12061A2B60013892D /* KeychainPersistenceTests.swift */,
+				0E96E0C22061A2B60013892D /* UserDefaultsPersistenceTests.swift */,
 				0E96E0FF2062C3BD0013892D /* ContainerTests.swift */,
-				0E96E10D206409640013892D /* DefaultsContainerTests.swift */,
-				0E96E1102064097D0013892D /* KeychainContainerTests.swift */,
-				0E96E10F2064097C0013892D /* FileContainerTests.swift */,
+				0E96E1002062C3BD0013892D /* DefaultsContainerTests.swift */,
+				0E96E1012062C3BD0013892D /* FileContainerTests.swift */,
+				0E96E0FE2062C3BC0013892D /* KeychainContainerTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -375,11 +399,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E96E0E42061A5DC0013892D /* UserDefaultsPersistence.swift in Sources */,
 				0E96E0FD2062C3A20013892D /* Defaults+Container.swift in Sources */,
 				0E96E0FA2062C3A20013892D /* KeychainContainer.swift in Sources */,
 				0E96E0FC2062C3A20013892D /* Codable+Default.swift in Sources */,
+				0E96E0E12061A5DC0013892D /* KeychainPersistence.swift in Sources */,
+				0E96E0E22061A5DC0013892D /* FilePersistence.swift in Sources */,
 				0E96E0FB2062C3A20013892D /* Container.swift in Sources */,
 				0E96E0F92062C3A20013892D /* FileContainer.swift in Sources */,
+				0E96E0E32061A5DC0013892D /* StorageContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,10 +415,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E96E0C62061A2B60013892D /* UserDefaultsPersistenceTests.swift in Sources */,
+				0E96E1052062C3BD0013892D /* FileContainerTests.swift in Sources */,
+				0E96E1022062C3BD0013892D /* KeychainContainerTests.swift in Sources */,
+				0E96E0C32061A2B60013892D /* DirectoryTests.swift in Sources */,
 				0E96E1032062C3BD0013892D /* ContainerTests.swift in Sources */,
-				0E96E1122064097D0013892D /* KeychainContainerTests.swift in Sources */,
-				0E96E1112064097D0013892D /* FileContainerTests.swift in Sources */,
-				0E96E10E206409640013892D /* DefaultsContainerTests.swift in Sources */,
+				0E96E0C42061A2B60013892D /* FilePersistenceTests.swift in Sources */,
+				0E96E0C52061A2B60013892D /* KeychainPersistenceTests.swift in Sources */,
+				0E96E1042062C3BD0013892D /* DefaultsContainerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
