@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0E96E0802061A18D0013892D /* Holocron.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E96E0772061A18D0013892D /* Holocron.framework */; };
 		0E96E0BC2061A2580013892D /* Holocron.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E96E0BA2061A2580013892D /* Holocron.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0E96E0C62061A2B60013892D /* UserDefaultsPersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0C22061A2B60013892D /* UserDefaultsPersistenceTests.swift */; };
 		0E96E0D92061A5600013892D /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E96E0DA2061A5600013892D /* KeychainAccess.framework */; };
 		0E96E0DB2061A5670013892D /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E96E0DC2061A5670013892D /* Result.framework */; };
 		0E96E0E12061A5DC0013892D /* KeychainPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0DD2061A5DC0013892D /* KeychainPersistence.swift */; };
@@ -79,7 +78,6 @@
 		0E96E0A82061A2000013892D /* Holocron-iOSExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Holocron-iOSExample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E96E0BA2061A2580013892D /* Holocron.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Holocron.h; sourceTree = "<group>"; };
 		0E96E0BB2061A2580013892D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0E96E0C22061A2B60013892D /* UserDefaultsPersistenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsPersistenceTests.swift; sourceTree = "<group>"; };
 		0E96E0D82061A53F0013892D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E96E0DA2061A5600013892D /* KeychainAccess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KeychainAccess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E96E0DC2061A5670013892D /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,7 +219,6 @@
 			isa = PBXGroup;
 			children = (
 				0E96E0D62061A5130013892D /* Supporting Files */,
-				0E96E0C22061A2B60013892D /* UserDefaultsPersistenceTests.swift */,
 				0E96E0FF2062C3BD0013892D /* ContainerTests.swift */,
 				0E96E1002062C3BD0013892D /* DefaultsContainerTests.swift */,
 				0E96E1012062C3BD0013892D /* FileContainerTests.swift */,
@@ -406,7 +403,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E96E0C62061A2B60013892D /* UserDefaultsPersistenceTests.swift in Sources */,
 				0E96E1052062C3BD0013892D /* FileContainerTests.swift in Sources */,
 				0E96E1022062C3BD0013892D /* KeychainContainerTests.swift in Sources */,
 				0E96E1032062C3BD0013892D /* ContainerTests.swift in Sources */,
