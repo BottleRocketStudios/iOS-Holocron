@@ -6,8 +6,6 @@
 //  Copyright © 2017 Bottle Rocket. All rights reserved.
 //
 
-// Testing Danger...
-
 import Foundation
 
 public struct FileStore {
