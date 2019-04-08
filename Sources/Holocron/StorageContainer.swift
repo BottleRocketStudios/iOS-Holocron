@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import Result
-
 
 /// Custom Error Handling
 /// - notFound: Error thrown when a resource could not be found at the specified location

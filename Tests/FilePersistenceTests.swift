@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import Result
 @testable import Holocron
 
 class FilePersistenceTests: XCTestCase {
@@ -116,7 +115,7 @@ class FilePersistenceTests: XCTestCase {
         
         XCTAssert(image != nil, "testImages: Failed to generate image")
         
-        let data = UIImageJPEGRepresentation(image!, 1)
+        let data = image!.jpegData(compressionQuality: 1)
         
         // Create and retrieve a text file
         let fileStore = FileStore(fileName: "imageFile123456789.jpg")
@@ -208,7 +207,7 @@ class FilePersistenceTests: XCTestCase {
     func testRemove() {
         let textExpectation = expectation(description: "testRemove")
         let text = "This is a test string"
-        try? text.data(using: .utf8)?.write(to: cacheDirectory.appendingPathComponent("testString", isDirectory: false))
+        try? text.data(using: .utf8)?.write(to: cacheDirectory.appendingPathComponent("testString", isDirectory: false)
         let fileStore = FileStore(fileName: "testString")
         filePersistance.removeObject(for: fileStore) { (result) in
             switch result {

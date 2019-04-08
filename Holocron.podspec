@@ -28,6 +28,5 @@ s.source           = { :git => 'https://github.com/bottlerocketstudios/iOS-Holoc
 
 s.ios.deployment_target = '8.0'
 s.source_files = 'Sources/Holocron/**/*'
-s.dependency 'Result'
 s.dependency 'KeychainAccess'
 end

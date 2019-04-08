@@ -7,7 +7,6 @@
 
 import UIKit
 import Holocron
-import Result
 
 class ViewController: UIViewController {
     

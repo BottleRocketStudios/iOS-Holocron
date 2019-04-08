@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import Result
 @testable import Holocron
 
 class DirectoryTests: XCTestCase {
@@ -116,7 +115,7 @@ class DirectoryTests: XCTestCase {
         //after: A B
         
         let text = "This is a test read"
-        try? text.data(using: .utf8)?.write(to: cacheDirectory.appendingPathComponent("testRead", isDirectory: false))
+        try? text.data(using: .utf8)?.write(to: cacheDirectory.appendingPathComponent("testRead", isDirectory: false)
         
         let fileManager = FileManager()
         var urls = try? fileManager.contentsOfDirectory(at: cacheDirectory, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
@@ -190,11 +189,11 @@ class DirectoryTests: XCTestCase {
         let textExpectation = expectation(description: "testRead")
         
         let textA = "This is a test read A"
-        try? textA.data(using: .utf8)?.write(to: cacheDirectory.appendingPathComponent("testReadA", isDirectory: false))
+        ((try? textA.data(using: .utf8)?.write(to: cacheDirectory.appendingPathComponent("testReadA", isDirectory: false))) as ()??)
         let textB = "This is a test read B"
-        try? textB.data(using: .utf8)?.write(to: cacheDirectory.appendingPathComponent("testReadB", isDirectory: false))
+        ((try? textB.data(using: .utf8)?.write(to: cacheDirectory.appendingPathComponent("testReadB", isDirectory: false))) as ()??)
         let textC = "This is a test read C"
-        try? textC.data(using: .utf8)?.write(to: cacheDirectory.appendingPathComponent("testReadC", isDirectory: false))
+        ((try? textC.data(using: .utf8)?.write(to: cacheDirectory.appendingPathComponent("testReadC", isDirectory: false))) as ()??)
         let store = FileStore(fileName: "testReadB")
         filePersistance.removeObject(for: store) { (result) in
             switch result {
