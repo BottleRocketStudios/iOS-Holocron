@@ -207,7 +207,7 @@ class FilePersistenceTests: XCTestCase {
     func testRemove() {
         let textExpectation = expectation(description: "testRemove")
         let text = "This is a test string"
-        try? text.data(using: .utf8)?.write(to: cacheDirectory.appendingPathComponent("testString", isDirectory: false)
+        try? text.data(using: .utf8)?.write(to: cacheDirectory.appendingPathComponent("testString", isDirectory: false))
         let fileStore = FileStore(fileName: "testString")
         filePersistance.removeObject(for: fileStore) { (result) in
             switch result {

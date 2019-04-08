@@ -115,7 +115,7 @@ class DirectoryTests: XCTestCase {
         //after: A B
         
         let text = "This is a test read"
-        try? text.data(using: .utf8)?.write(to: cacheDirectory.appendingPathComponent("testRead", isDirectory: false)
+        try? text.data(using: .utf8)?.write(to: cacheDirectory.appendingPathComponent("testRead", isDirectory: false))
         
         let fileManager = FileManager()
         var urls = try? fileManager.contentsOfDirectory(at: cacheDirectory, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
@@ -189,11 +189,11 @@ class DirectoryTests: XCTestCase {
         let textExpectation = expectation(description: "testRead")
         
         let textA = "This is a test read A"
-        ((try? textA.data(using: .utf8)?.write(to: cacheDirectory.appendingPathComponent("testReadA", isDirectory: false))) as ()??)
+        try? textA.data(using: .utf8)?.write(to: cacheDirectory.appendingPathComponent("testReadA", isDirectory: false))
         let textB = "This is a test read B"
-        ((try? textB.data(using: .utf8)?.write(to: cacheDirectory.appendingPathComponent("testReadB", isDirectory: false))) as ()??)
+        try? textB.data(using: .utf8)?.write(to: cacheDirectory.appendingPathComponent("testReadB", isDirectory: false))
         let textC = "This is a test read C"
-        ((try? textC.data(using: .utf8)?.write(to: cacheDirectory.appendingPathComponent("testReadC", isDirectory: false))) as ()??)
+        try? textC.data(using: .utf8)?.write(to: cacheDirectory.appendingPathComponent("testReadC", isDirectory: false))
         let store = FileStore(fileName: "testReadB")
         filePersistance.removeObject(for: store) { (result) in
             switch result {
