@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import Result
 @testable import Holocron
 
 class DirectoryTests: XCTestCase {

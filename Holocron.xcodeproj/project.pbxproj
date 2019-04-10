@@ -14,17 +14,16 @@
 		0E96E0C52061A2B60013892D /* KeychainPersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0C12061A2B60013892D /* KeychainPersistenceTests.swift */; };
 		0E96E0C62061A2B60013892D /* UserDefaultsPersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0C22061A2B60013892D /* UserDefaultsPersistenceTests.swift */; };
 		0E96E0D92061A5600013892D /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E96E0DA2061A5600013892D /* KeychainAccess.framework */; };
-		0E96E0DB2061A5670013892D /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E96E0DC2061A5670013892D /* Result.framework */; };
 		0E96E0E12061A5DC0013892D /* KeychainPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0DD2061A5DC0013892D /* KeychainPersistence.swift */; };
 		0E96E0E22061A5DC0013892D /* FilePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0DE2061A5DC0013892D /* FilePersistence.swift */; };
 		0E96E0E32061A5DC0013892D /* StorageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0DF2061A5DC0013892D /* StorageContainer.swift */; };
 		0E96E0E42061A5DC0013892D /* UserDefaultsPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0E02061A5DC0013892D /* UserDefaultsPersistence.swift */; };
 		0E96E0EC2061A61B0013892D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E96E0E72061A61A0013892D /* Images.xcassets */; };
-		0E96E0ED2061A61B0013892D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E96E0E82061A61B0013892D /* Info.plist */; };
 		0E96E0EE2061A61B0013892D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0E92061A61B0013892D /* ViewController.swift */; };
 		0E96E0EF2061A61B0013892D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0EA2061A61B0013892D /* AppDelegate.swift */; };
 		0E96E0F22061A69A0013892D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E96E0F02061A66F0013892D /* Main.storyboard */; };
 		0E96E0F32061A6A10013892D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E96E0F12061A66F0013892D /* LaunchScreen.xib */; };
+		CB9BF53C225E353300E4E6F0 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9BF53B225E353300E4E6F0 /* KeychainAccess.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +48,6 @@
 		0E96E0C22061A2B60013892D /* UserDefaultsPersistenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsPersistenceTests.swift; sourceTree = "<group>"; };
 		0E96E0D82061A53F0013892D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E96E0DA2061A5600013892D /* KeychainAccess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KeychainAccess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0E96E0DC2061A5670013892D /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E96E0DD2061A5DC0013892D /* KeychainPersistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPersistence.swift; sourceTree = "<group>"; };
 		0E96E0DE2061A5DC0013892D /* FilePersistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePersistence.swift; sourceTree = "<group>"; };
 		0E96E0DF2061A5DC0013892D /* StorageContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageContainer.swift; sourceTree = "<group>"; };
@@ -60,6 +58,7 @@
 		0E96E0EA2061A61B0013892D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E96E0F02061A66F0013892D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		0E96E0F12061A66F0013892D /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		CB9BF53B225E353300E4E6F0 /* KeychainAccess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KeychainAccess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +66,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E96E0DB2061A5670013892D /* Result.framework in Frameworks */,
 				0E96E0D92061A5600013892D /* KeychainAccess.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB9BF53C225E353300E4E6F0 /* KeychainAccess.framework in Frameworks */,
 				0E96E0802061A18D0013892D /* Holocron.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,7 +183,7 @@
 		D1610158F88E118DAC288B5B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0E96E0DC2061A5670013892D /* Result.framework */,
+				CB9BF53B225E353300E4E6F0 /* KeychainAccess.framework */,
 				0E96E0DA2061A5600013892D /* KeychainAccess.framework */,
 			);
 			name = Frameworks;
@@ -264,17 +263,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					0E96E0762061A18D0013892D = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					0E96E07E2061A18D0013892D = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					0E96E0A72061A2000013892D = {
@@ -286,7 +285,7 @@
 			};
 			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "Holocron" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -326,7 +325,6 @@
 				0E96E0F32061A6A10013892D /* LaunchScreen.xib in Resources */,
 				0E96E0F22061A69A0013892D /* Main.storyboard in Resources */,
 				0E96E0EC2061A61B0013892D /* Images.xcassets in Resources */,
-				0E96E0ED2061A61B0013892D /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,7 +383,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -403,7 +401,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -420,7 +418,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -435,7 +433,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bottlerocketstudios.Holocron-iOS";
 				PRODUCT_NAME = Holocron;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -463,7 +461,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -486,7 +484,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bottlerocketstudios.Holocron-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -544,6 +542,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -552,12 +551,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -590,6 +591,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -597,6 +599,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -605,12 +608,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -635,6 +640,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

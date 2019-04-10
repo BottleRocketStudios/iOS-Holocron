@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Result
 
 public struct UserDefaultsStore: ExpressibleByStringLiteral {
     /// A unique identifier for setting up the userDefaults

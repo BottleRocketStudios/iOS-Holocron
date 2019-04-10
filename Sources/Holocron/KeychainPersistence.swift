@@ -7,7 +7,6 @@
 
 import Foundation
 import KeychainAccess
-import Result
 
 public struct KeychainStore: ExpressibleByStringLiteral {
     
