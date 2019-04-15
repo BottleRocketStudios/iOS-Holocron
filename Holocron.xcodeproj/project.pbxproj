@@ -11,7 +11,6 @@
 		0E96E0BC2061A2580013892D /* Holocron.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E96E0BA2061A2580013892D /* Holocron.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0E96E0D92061A5600013892D /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E96E0DA2061A5600013892D /* KeychainAccess.framework */; };
 		0E96E0EC2061A61B0013892D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E96E0E72061A61A0013892D /* Images.xcassets */; };
-		0E96E0ED2061A61B0013892D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E96E0E82061A61B0013892D /* Info.plist */; };
 		0E96E0EE2061A61B0013892D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0E92061A61B0013892D /* ViewController.swift */; };
 		0E96E0EF2061A61B0013892D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96E0EA2061A61B0013892D /* AppDelegate.swift */; };
 		0E96E0F22061A69A0013892D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E96E0F02061A66F0013892D /* Main.storyboard */; };
@@ -36,19 +35,19 @@
 			remoteGlobalIDString = 0E96E0762061A18D0013892D;
 			remoteInfo = "Holocron-iOS";
 		};
-		0E96E1062062C4110013892D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0E96E0A72061A2000013892D;
-			remoteInfo = "Holocron-iOSExample";
-		};
 		0E96E10A2062C9020013892D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0E96E0762061A18D0013892D;
 			remoteInfo = "Holocron-iOS";
+		};
+		CB42653F226511160062C97A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E96E0A72061A2000013892D;
+			remoteInfo = "Holocron-iOSExample";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -263,7 +262,7 @@
 			);
 			dependencies = (
 				0E96E0822061A18D0013892D /* PBXTargetDependency */,
-				0E96E1072062C4110013892D /* PBXTargetDependency */,
+				CB426540226511160062C97A /* PBXTargetDependency */,
 			);
 			name = "Holocron-iOSTests";
 			productName = "Holocron-iOSTests";
@@ -296,7 +295,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					0E96E0762061A18D0013892D = {
@@ -319,10 +318,9 @@
 			};
 			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "Holocron" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -360,7 +358,6 @@
 				0E96E0F32061A6A10013892D /* LaunchScreen.xib in Resources */,
 				0E96E0F22061A69A0013892D /* Main.storyboard in Resources */,
 				0E96E0EC2061A61B0013892D /* Images.xcassets in Resources */,
-				0E96E0ED2061A61B0013892D /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,15 +403,15 @@
 			target = 0E96E0762061A18D0013892D /* Holocron-iOS */;
 			targetProxy = 0E96E0812061A18D0013892D /* PBXContainerItemProxy */;
 		};
-		0E96E1072062C4110013892D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0E96E0A72061A2000013892D /* Holocron-iOSExample */;
-			targetProxy = 0E96E1062062C4110013892D /* PBXContainerItemProxy */;
-		};
 		0E96E10B2062C9020013892D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0E96E0762061A18D0013892D /* Holocron-iOS */;
 			targetProxy = 0E96E10A2062C9020013892D /* PBXContainerItemProxy */;
+		};
+		CB426540226511160062C97A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E96E0A72061A2000013892D /* Holocron-iOSExample */;
+			targetProxy = CB42653F226511160062C97A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -429,7 +426,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -464,7 +461,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -592,6 +589,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -600,12 +598,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -645,6 +645,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -653,12 +654,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

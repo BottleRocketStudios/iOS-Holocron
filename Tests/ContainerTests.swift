@@ -43,18 +43,8 @@ class ContainerTests: XCTestCase {
         try XCTAssertEqual(value, container.value(for: #function))
     }
     
-    func negativeTest_retrieval() throws {
+    func test_negativeRetrieval() throws {
         let nilValue: Stored? = try container.value(for: #function)
         XCTAssertNil(nilValue)
-    }
-    
-    func test_autoUnboxing() throws {
-        // first, manually store a Box<Stored> to simulate leftover data from the old Holocron
-        let value = Stored(id: #line, title: #function)
-        let box = Box(element: value)
-        try container.write(box, for: #function)
-        
-        // then, ensure that the new library can properly unbox a Box<Stored> into a Stored
-        try XCTAssertEqual(value, container.value(for: #function))
     }
 }
