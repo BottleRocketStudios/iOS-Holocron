@@ -9,37 +9,52 @@
 import XCTest
 @testable import Holocron
 
-class ContainerTests: XCTestCase {
+class MockStorageProvider: StorageProvider {
+    private var storage = [String : Data]()
     
-    var container: UserDefaults = UserDefaults.standard
+    func deleteValue(for key: String) throws {
+        storage[key] = nil
+    }
+    
+    func value<T>(for key: String) throws -> T? where T : Decodable {
+        guard let data = storage[key] else {
+            return nil
+        }
+        
+        return try defaultDecoded(data)
+    }
+    
+    func write<T>(_ value: T, for key: String) throws where T : Encodable {
+        storage[key] = try defaultEncoded(value)
+    }
+}
+
+class ContainerTests: XCTestCase {
+    let container = MockStorageProvider()
     
     struct Stored: Codable, Equatable {
         let id: Int
         let title: String
+    }
+    
+    func test_retrieval() throws {
+        let value = Stored(id: #line, title: #function)
+        try container.write(value, for: #function)
+        try XCTAssertEqual(value, container.value(for: #function))
+    }
+    
+    func negativeTest_retrieval() throws {
+        let nilValue: Stored? = try container.value(for: #function)
+        XCTAssertNil(nilValue)
+    }
+    
+    func test_autoUnboxing() throws {
+        // first, manually store a Box<Stored> to simulate leftover data from the old Holocron
+        let value = Stored(id: #line, title: #function)
+        let box = Box(element: value)
+        try container.write(box, for: #function)
         
-        static func ==(lhs: Stored, rhs: Stored) -> Bool {
-            return lhs.id == rhs.id && lhs.title == rhs.title
-        }
-    }
-    
-    func testContainer_subscriptRetrieval() {
-        let value = Stored(id: 1, title: "title")
-        container["testKey"] = value
-        XCTAssertEqual(value, container["testKey"])
-    }
-    
-    func testContainer_failedSubscriptRetrieval() {
-        let x: Stored? = container["testKey2"]
-        XCTAssertNil(x)
-    }
-    
-    func testContainer_subscriptingNilRemovesObject() {
-        let value = Stored(id: 1, title: "title")
-        container["testKey"] = value
-        XCTAssertEqual(value, container["testKey"])
-        
-        container["testKey"] = Optional<Stored>.none
-        let x: Stored? = container["testKey"]
-        XCTAssertNil(x)
+        // then, ensure that the new library can properly unbox a Box<Stored> into a Stored
+        try XCTAssertEqual(value, container.value(for: #function))
     }
 }
