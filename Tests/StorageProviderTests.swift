@@ -110,7 +110,8 @@ class StorageProviderTests: XCTestCase {
     }
     
     func test_fileSystem() throws {
-        try StorageProviderTester(provider: .FileSystem(baseURL: FileManager.default.temporaryDirectory)).runTests()
+        let provider = FileSystemStorageProvider(baseURL: FileManager.default.temporaryDirectory)
+        try StorageProviderTester(provider: provider).runTests()
     }
     
     func test_keychain() throws {
