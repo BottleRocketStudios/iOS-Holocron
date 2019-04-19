@@ -24,6 +24,8 @@ extension StorageProvider {
     }
     
     /// Encodes an object for storage.
+    /// - parameter object: The object to encode.
+    /// - returns: A `Data` containing the encoded representation of the object.
     func defaultEncoded<T: Encodable>(_ object: T) throws -> Data {
         return try JSONEncoder().encode(Box(element: object))
     }
