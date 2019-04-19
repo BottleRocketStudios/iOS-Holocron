@@ -87,7 +87,7 @@ class MockStorageProvider: StorageProvider {
         storage[key] = nil
     }
     
-    func value<T>(for key: String) throws -> T? where T : Decodable {
+    func value<T: Decodable>(for key: String) throws -> T? {
         guard let data = storage[key] else {
             return nil
         }
@@ -95,7 +95,7 @@ class MockStorageProvider: StorageProvider {
         return try defaultDecoded(data)
     }
     
-    func write<T>(_ value: T, for key: String) throws where T : Encodable {
+    func write<T: Encodable>(_ value: T, for key: String) throws {
         storage[key] = try defaultEncoded(value)
     }
 }

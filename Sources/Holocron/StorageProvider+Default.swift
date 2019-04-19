@@ -19,8 +19,7 @@ extension StorageProvider {
     /// - parameter data: The data to decode.
     /// - returns: A decoded object.
     func defaultDecoded<T: Decodable>(_ data: Data) throws -> T {
-        let box = try JSONDecoder().decode(Box<T>.self, from: data)
-        return box.element
+        return try JSONDecoder().decode(Box<T>.self, from: data).element
     }
     
     /// Encodes an object for storage.

@@ -17,7 +17,7 @@ extension Keychain: StorageProvider {
         try remove(key)
     }
     
-    public func value<T>(for key: String) throws -> T? where T : Decodable {
+    public func value<T: Decodable>(for key: String) throws -> T?{
         guard let data = try getData(key) else {
             return nil
         }
@@ -25,7 +25,7 @@ extension Keychain: StorageProvider {
         return try defaultDecoded(data)
     }
     
-    public func write<T>(_ value: T, for key: String) throws where T : Encodable {
+    public func write<T: Encodable>(_ value: T, for key: String) throws {
         try set(defaultEncoded(value), key: key)
     }
 }
