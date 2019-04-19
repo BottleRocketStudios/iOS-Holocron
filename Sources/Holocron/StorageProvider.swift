@@ -6,6 +6,21 @@
 //  Copyright © 2019 CocoaPods. All rights reserved.
 //
 
+/// Performs an (optionally) throwing synchronous operation on an arbitrary background queue
+/// and calls a completion block on the main queue once complete.
+/// - parameter block: A block containing the operation to perform.
+/// - parameter completion: The completion block to call when the operation is finished.
+private func performAsynchronously<T>(_ block: @escaping () throws -> T, completion: @escaping (Result<T, Error>) -> ()) {
+    OperationQueue().addOperation {
+        do {
+            let value: T = try block()
+            OperationQueue.main.addOperation { completion(.success((value))) }
+        } catch {
+            OperationQueue.main.addOperation { completion(.failure(error)) }
+        }
+    }
+}
+
 /// An interface for a simple key value store.
 public protocol StorageProvider {
     /// Deletes the value associated with the provided key.
@@ -23,23 +38,17 @@ public protocol StorageProvider {
     func write<T: Encodable>(_ value: T, for key: String) throws
 }
 
-/// An interface for an asynchronous, failable key value store.
-/// This interface is a superset of that for a simple key value store, as described in `StorageProvider`.
-public protocol AsyncStorageProvider: StorageProvider {
-    /// Asynchronously deletes the value associated with the provided key.
-    /// - parameter key: The key whose value should be deleted.
-    /// - returns: A `Result` describing the completion of the operation.
-    func deleteValue(for key: String) -> Result<Void, Error>
+// MARK: Async Interface
+extension StorageProvider {
+    func deleteValue(for key: String, completion: @escaping (Result<Void, Error>) -> ()) {
+        performAsynchronously({ try self.deleteValue(for: key) }, completion: completion)
+    }
     
-    /// Asynchronoushly retrieves the value associated for a specific key.
-    /// - parameter key: The key whose value to retrieve.
-    /// - returns: A `Result` describing the completion of the operation.
-    /// - note: This function will complete with a `nil` value if the data found in the key value store cannot be converted to type T.
-    func value<T: Decodable>(for key: String) -> Result<T, Error>
+    func value<T: Decodable>(for key: String, completion: @escaping (Result<T?, Error>) -> ()) {
+        performAsynchronously({ try self.value(for: key) }, completion: completion)
+    }
     
-    /// Asynchronously writes a value for a specific key.
-    /// - parameter value: The value to store.
-    /// - parameter key: The key to associate with `value`.
-    /// - returns: A `Result` describing the completion of the operation.
-    func write(_ value: Encodable, for key: String) -> Result<Void, Error>
+    func write<T: Encodable>(_ value: T, for key: String, completion: @escaping (Result<Void, Error>) -> ()) {
+        performAsynchronously({ try self.write(value, for: key) }, completion: completion)
+    }
 }
