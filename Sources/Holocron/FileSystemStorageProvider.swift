@@ -8,22 +8,36 @@
 
 import Foundation
 
-/*
- TODO: Add support for:
- * createIntermediateDirectories
- * protectionType
- * read / write transformations
- */
-
 public extension StorageProvider {
     typealias FileSystem = FileSystemStorageProvider
 }
 
 public struct FileSystemStorageProvider {
     let baseURL: URL
+    let readTransformer: Transformer
+    let writeTransformer: Transformer
+    
+    init(baseURL: URL, readTransformer: @escaping Transformer = { $0 }, writeTransformer: @escaping Transformer = { $0 }) {
+        self.baseURL = baseURL
+        self.readTransformer = readTransformer
+        self.writeTransformer = writeTransformer
+    }
     
     func url(for key: String) -> URL {
         return baseURL.appendingPathComponent(key)
+    }
+    
+    typealias Transformer = (Data) -> Data
+}
+
+// MARK: Public API
+extension FileSystemStorageProvider {
+    /// Writes a value for a specific key.
+    /// - parameter value: The value to store.
+    /// - parameter key: The key to associate with `value`.
+    /// - parameter options: The options to use when writing the file.
+    public func write<T: Encodable>(_ value: T, for key: String, options: Data.WritingOptions) throws {
+        try writeTransformer(defaultEncoded(value)).write(to: url(for: key), options: options)
     }
 }
 
@@ -38,10 +52,10 @@ extension FileSystemStorageProvider: StorageProvider {
             return nil
         }
         
-        return try defaultDecoded(data)
+        return try defaultDecoded(readTransformer(data))
     }
     
     public func write<T: Encodable>(_ value: T, for key: String) throws {
-        try defaultEncoded(value).write(to: url(for: key))
+        try write(value, for: key, options: [])
     }
 }
