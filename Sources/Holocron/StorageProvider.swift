@@ -6,6 +6,7 @@
 //  Copyright © 2019 CocoaPods. All rights reserved.
 //
 
+// MARK: Async Utilities
 /// Performs an (optionally) throwing synchronous operation on an arbitrary background queue
 /// and calls a completion block on the main queue once complete.
 /// - parameter block: A block containing the operation to perform.
@@ -21,6 +22,7 @@ private func performAsynchronously<T>(_ block: @escaping () throws -> T, complet
     }
 }
 
+// MARK: StorageProvider
 /// An interface for a simple key value store.
 public protocol StorageProvider {
     /// Deletes the value associated with the provided key.
@@ -38,7 +40,6 @@ public protocol StorageProvider {
     func write<T: Encodable>(_ value: T, for key: String) throws
 }
 
-// MARK: Async Interface
 extension StorageProvider {
     func deleteValue(for key: String, completion: @escaping (Result<Void, Error>) -> ()) {
         performAsynchronously({ try self.deleteValue(for: key) }, completion: completion)

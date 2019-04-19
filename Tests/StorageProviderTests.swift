@@ -29,6 +29,7 @@ struct StorageProviderTester {
         try test_storeURL()
         try test_storeBool()
         try test_storeCodable()
+        try test_storeRawBytes()
         try test_negativeRetrieval()
     }
     
@@ -70,6 +71,12 @@ struct StorageProviderTester {
     
     func test_storeCodable() throws {
         let value = Stored(id: #line, title: #function)
+        try provider.write(value, for: #function)
+        try XCTAssertEqual(provider.value(for: #function), value)
+    }
+    
+    func test_storeRawBytes() throws {
+        let value = Data(bytes: Array(0x0...0xf))
         try provider.write(value, for: #function)
         try XCTAssertEqual(provider.value(for: #function), value)
     }

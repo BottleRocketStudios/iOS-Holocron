@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: Base Struct
 public extension StorageProvider {
     typealias FileSystem = FileSystemStorageProvider
 }
