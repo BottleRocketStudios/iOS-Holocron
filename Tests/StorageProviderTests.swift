@@ -6,11 +6,21 @@
 //  Copyright © 2018 CocoaPods. All rights reserved.
 //
 
+import Foundation
 @testable import Holocron
+import KeychainAccess
 import XCTest
 
-struct StorageProviderTester {
-    let provider: StorageProvider
+extension String: RawRepresentable {
+    public var rawValue: String { return self }
+    
+    public init?(rawValue: String) {
+        return nil
+    }
+}
+
+struct StorageProviderTester<Provider: StorageProvider> where Provider.Key == String {
+    let provider: Provider
     
     struct Stored: Codable, Equatable {
         let id: Int
@@ -109,7 +119,7 @@ class MockStorageProvider: StorageProvider {
 
 class StorageProviderTests: XCTestCase {
     func test_defaults() throws {
-        try StorageProviderTester(provider: .UserDefaults()).runTests()
+        try StorageProviderTester<UserDefaults>(provider: .UserDefaults()).runTests()
     }
     
     func test_mock() throws {
@@ -117,11 +127,11 @@ class StorageProviderTests: XCTestCase {
     }
     
     func test_fileSystem() throws {
-        let provider = FileSystemStorageProvider(baseURL: FileManager.default.temporaryDirectory)
+        let provider = FileSystemStorageProvider<String>(baseURL: FileManager.default.temporaryDirectory)
         try StorageProviderTester(provider: provider).runTests()
     }
     
     func test_keychain() throws {
-        try StorageProviderTester(provider: .Keychain()).runTests()
+        try StorageProviderTester<Keychain>(provider: .Keychain()).runTests()
     }
 }

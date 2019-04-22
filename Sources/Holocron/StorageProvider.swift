@@ -25,31 +25,34 @@ private func performAsynchronously<T>(_ block: @escaping () throws -> T, complet
 // MARK: StorageProvider
 /// An interface for a simple key value store.
 public protocol StorageProvider {
+    /// The type to use for keys. In most cases, this will be String, but at the very least, it should be opaque.
+    associatedtype Key
+    
     /// Deletes the value associated with the provided key.
     /// - parameter key: The key whose value should be deleted.
-    func deleteValue(for key: String) throws
+    func deleteValue(for key: Key) throws
     
     /// Retrieves the value associated for a specific key.
     /// - parameter key: The key whose value to retrieve.
     /// - note: This function should return `nil` if the data found in the key value store cannot be converted to type T.
-    func value<T: Decodable>(for key: String) throws -> T?
+    func value<T: Decodable>(for key: Key) throws -> T?
     
     /// Writes a value for a specific key.
     /// - parameter value: The value to store.
     /// - parameter key: The key to associate with `value`.
-    func write<T: Encodable>(_ value: T, for key: String) throws
+    func write<T: Encodable>(_ value: T, for key: Key) throws
 }
 
-extension StorageProvider {
-    func deleteValue(for key: String, completion: @escaping (Result<Void, Error>) -> ()) {
+public extension StorageProvider {
+    func deleteValue(for key: Key, completion: @escaping (Result<Void, Error>) -> ()) {
         performAsynchronously({ try self.deleteValue(for: key) }, completion: completion)
     }
     
-    func value<T: Decodable>(for key: String, completion: @escaping (Result<T?, Error>) -> ()) {
+    func value<T: Decodable>(for key: Key, completion: @escaping (Result<T?, Error>) -> ()) {
         performAsynchronously({ try self.value(for: key) }, completion: completion)
     }
     
-    func write<T: Encodable>(_ value: T, for key: String, completion: @escaping (Result<Void, Error>) -> ()) {
+    func write<T: Encodable>(_ value: T, for key: Key, completion: @escaping (Result<Void, Error>) -> ()) {
         performAsynchronously({ try self.write(value, for: key) }, completion: completion)
     }
 }

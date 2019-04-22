@@ -13,7 +13,7 @@ public extension StorageProvider {
     typealias FileSystem = FileSystemStorageProvider
 }
 
-public struct FileSystemStorageProvider {
+public struct FileSystemStorageProvider<Key: RawRepresentable> where Key.RawValue == String {
     let baseURL: URL
     let readTransformer: Transformer
     let writeTransformer: Transformer
@@ -24,8 +24,8 @@ public struct FileSystemStorageProvider {
         self.writeTransformer = writeTransformer
     }
     
-    func url(for key: String) -> URL {
-        return baseURL.appendingPathComponent(key)
+    func url(for key: Key) -> URL {
+        return baseURL.appendingPathComponent(key.rawValue)
     }
     
     typealias Transformer = (Data) -> Data
@@ -37,18 +37,18 @@ extension FileSystemStorageProvider {
     /// - parameter value: The value to store.
     /// - parameter key: The key to associate with `value`.
     /// - parameter options: The options to use when writing the file.
-    public func write<T: Encodable>(_ value: T, for key: String, options: Data.WritingOptions) throws {
+    public func write<T: Encodable>(_ value: T, for key: Key, options: Data.WritingOptions) throws {
         try writeTransformer(defaultEncoded(value)).write(to: url(for: key), options: options)
     }
 }
 
 // MARK: StorageProvider
 extension FileSystemStorageProvider: StorageProvider {
-    public func deleteValue(for key: String) throws {
+    public func deleteValue(for key: Key) throws {
         try FileManager.default.removeItem(at: url(for: key))
     }
     
-    public func value<T: Decodable>(for key: String) throws -> T? {
+    public func value<T: Decodable>(for key: Key) throws -> T? {
         guard let data = FileManager.default.contents(atPath: url(for: key).path) else {
             return nil
         }
@@ -56,7 +56,7 @@ extension FileSystemStorageProvider: StorageProvider {
         return try defaultDecoded(readTransformer(data))
     }
     
-    public func write<T: Encodable>(_ value: T, for key: String) throws {
+    public func write<T: Encodable>(_ value: T, for key: Key) throws {
         try write(value, for: key, options: [])
     }
 }
