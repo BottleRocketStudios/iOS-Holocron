@@ -3,7 +3,7 @@
 //  Holocron-iOS
 //
 //  Created by Pranjal Satija on 4/15/19.
-//  Copyright © 2019 CocoaPods. All rights reserved.
+//  Copyright © 2019 Bottle Rocket Studios. All rights reserved.
 //
 
 // MARK: Default Coding
@@ -24,7 +24,7 @@ extension StorageProvider {
     
     /// Encodes an object for storage.
     /// - parameter object: The object to encode.
-    /// - returns: A `Data` containing the encoded representation of the object.
+    /// - returns: `Data` containing the encoded representation of the object.
     func defaultEncoded<T: Encodable>(_ object: T) throws -> Data {
         return try JSONEncoder().encode(Box(element: object))
     }
@@ -32,5 +32,15 @@ extension StorageProvider {
 
 // MARK: Subscripting
 public extension StorageProvider {
-    // TODO: Add this
+    subscript<T: Codable>(key: Key) -> T? {
+        get {
+            if let value: T? = try? value(for: key) {
+                return value
+            }
+            
+            return nil
+        }
+        
+        set { try? write(newValue, for: key) }
+    }
 }

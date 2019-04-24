@@ -15,8 +15,6 @@ extension Key {
 }
 
 class ViewController: UIViewController {
-
-    //let defaultsContainer = UserDefaults.standard
     let defaultsProvider: StorageProvider = UserDefaults.standard
     let keychainProvider: StorageProvider = .Keychain(service: "com.holocron.example")
     let fileProvider = FileSystemStorageProvider(baseURL: FileManager.default.temporaryDirectory)

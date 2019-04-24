@@ -3,7 +3,7 @@
 //  Holocron-iOS
 //
 //  Created by Pranjal Satija on 4/15/19.
-//  Copyright © 2019 CocoaPods. All rights reserved.
+//  Copyright © 2019 Bottle Rocket Studios. All rights reserved.
 //
 
 import Foundation
@@ -14,6 +14,8 @@ public extension StorageProvider {
 }
 
 public struct FileSystemStorageProvider {
+    public typealias Transformer = (Data) -> Data
+    
     let baseURL: URL
     let readTransformer: Transformer
     let writeTransformer: Transformer
@@ -27,8 +29,6 @@ public struct FileSystemStorageProvider {
     func url(for key: Key) -> URL {
         return baseURL.appendingPathComponent(key.rawValue)
     }
-    
-    public typealias Transformer = (Data) -> Data
 }
 
 // MARK: Public API

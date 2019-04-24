@@ -3,7 +3,7 @@
 //  Holocron-iOS
 //
 //  Created by Pranjal Satija on 4/24/19.
-//  Copyright © 2019 CocoaPods. All rights reserved.
+//  Copyright © 2019 Bottle Rocket Studios. All rights reserved.
 //
 
 public struct Key: Hashable, RawRepresentable, ExpressibleByStringLiteral {

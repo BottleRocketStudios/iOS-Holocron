@@ -11,14 +11,8 @@ import Foundation
 import KeychainAccess
 import XCTest
 
-extension String: RawRepresentable {
-    public var rawValue: String { return self }
-    
-    public init?(rawValue: String) {
-        return nil
-    }
-}
-
+// MARK: StorageProviderTester
+/// Used to uniformly run tests on a variety of storage providers.
 struct StorageProviderTester {
     let provider: StorageProvider
     
@@ -97,6 +91,7 @@ struct StorageProviderTester {
     }
 }
 
+// MARK: MockStorageProvider
 class MockStorageProvider: StorageProvider {
     private var storage = [String : Data]()
     
@@ -117,6 +112,8 @@ class MockStorageProvider: StorageProvider {
     }
 }
 
+// MARK: StorageProviderTests
+/// Runs tests using `StorageProviderTester` with all the storage providers that are available.
 class StorageProviderTests: XCTestCase {
     func test_defaults() throws {
         try StorageProviderTester(provider: .UserDefaults()).runTests()
