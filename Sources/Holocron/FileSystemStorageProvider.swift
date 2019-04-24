@@ -18,7 +18,7 @@ public struct FileSystemStorageProvider {
     let readTransformer: Transformer
     let writeTransformer: Transformer
     
-    init(baseURL: URL, readTransformer: @escaping Transformer = { $0 }, writeTransformer: @escaping Transformer = { $0 }) {
+    public init(baseURL: URL, readTransformer: @escaping Transformer = { $0 }, writeTransformer: @escaping Transformer = { $0 }) {
         self.baseURL = baseURL
         self.readTransformer = readTransformer
         self.writeTransformer = writeTransformer
@@ -28,7 +28,7 @@ public struct FileSystemStorageProvider {
         return baseURL.appendingPathComponent(key.rawValue)
     }
     
-    typealias Transformer = (Data) -> Data
+    public typealias Transformer = (Data) -> Data
 }
 
 // MARK: Public API
