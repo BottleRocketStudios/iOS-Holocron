@@ -13,19 +13,19 @@ public extension StorageProvider {
 }
 
 extension Keychain: StorageProvider {
-    public func deleteValue(for key: String) throws {
-        try remove(key)
+    public func deleteValue(for key: Key) throws {
+        try remove(key.rawValue)
     }
     
-    public func value<T: Decodable>(for key: String) throws -> T?{
-        guard let data = try getData(key) else {
+    public func value<T: Decodable>(for key: Key) throws -> T?{
+        guard let data = try getData(key.rawValue) else {
             return nil
         }
         
         return try defaultDecoded(data)
     }
     
-    public func write<T: Encodable>(_ value: T, for key: String) throws {
-        try set(defaultEncoded(value), key: key)
+    public func write<T: Encodable>(_ value: T, for key: Key) throws {
+        try set(defaultEncoded(value), key: key.rawValue)
     }
 }

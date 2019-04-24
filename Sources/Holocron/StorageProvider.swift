@@ -25,9 +25,6 @@ private func performAsynchronously<T>(_ block: @escaping () throws -> T, complet
 // MARK: StorageProvider
 /// An interface for a simple key value store.
 public protocol StorageProvider {
-    /// The type to use for keys. In most cases, this will be String, but at the very least, it should be opaque.
-    associatedtype Key
-    
     /// Deletes the value associated with the provided key.
     /// - parameter key: The key whose value should be deleted.
     func deleteValue(for key: Key) throws

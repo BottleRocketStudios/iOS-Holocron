@@ -16,7 +16,7 @@ class FileSystemStorageProviderTests: XCTestCase {
         
         let value = Data(bytes: [0, 1, 2])
         
-        let provider = FileSystemStorageProvider<String>(
+        let provider = FileSystemStorageProvider(
             baseURL: FileManager.default.temporaryDirectory,
             readTransformer: {(data) in
                 readTransformExpectation.fulfill()

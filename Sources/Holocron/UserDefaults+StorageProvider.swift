@@ -13,19 +13,19 @@ public extension StorageProvider {
 }
 
 extension UserDefaults: StorageProvider {
-    public func deleteValue(for key: String) {
-        removeObject(forKey: key)
+    public func deleteValue(for key: Key) {
+        removeObject(forKey: key.rawValue)
     }
     
-    public func value<T: Decodable>(for key: String) throws -> T? {
-        guard let data = data(forKey: key) else {
+    public func value<T: Decodable>(for key: Key) throws -> T? {
+        guard let data = data(forKey: key.rawValue) else {
             return nil
         }
         
         return try defaultDecoded(data)
     }
     
-    public func write<T: Encodable>(_ value: T, for key: String) throws {
-        try set(defaultEncoded(value), forKey: key)
+    public func write<T: Encodable>(_ value: T, for key: Key) throws {
+        try set(defaultEncoded(value), forKey: key.rawValue)
     }
 }

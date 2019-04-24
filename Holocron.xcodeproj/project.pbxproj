@@ -24,6 +24,7 @@
 		CB9BF53E225E4C1B00E4E6F0 /* StorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9BF53D225E4C1B00E4E6F0 /* StorageProvider.swift */; };
 		CB9BF549225E676B00E4E6F0 /* Keychain+StorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9BF548225E676B00E4E6F0 /* Keychain+StorageProvider.swift */; };
 		CB9BF54B225E678400E4E6F0 /* UserDefaults+StorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9BF54A225E678400E4E6F0 /* UserDefaults+StorageProvider.swift */; };
+		CBCB75512270C34A00AF9C0F /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCB75502270C34A00AF9C0F /* Key.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		CB9BF53D225E4C1B00E4E6F0 /* StorageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProvider.swift; sourceTree = "<group>"; };
 		CB9BF548225E676B00E4E6F0 /* Keychain+StorageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keychain+StorageProvider.swift"; sourceTree = "<group>"; };
 		CB9BF54A225E678400E4E6F0 /* UserDefaults+StorageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+StorageProvider.swift"; sourceTree = "<group>"; };
+		CBCB75502270C34A00AF9C0F /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,11 +138,12 @@
 		0E4AE2B42061A11100361032 /* Holocron */ = {
 			isa = PBXGroup;
 			children = (
+				CB8F6FFA2265314D001B9E2E /* FileSystemStorageProvider.swift */,
+				CBCB75502270C34A00AF9C0F /* Key.swift */,
 				CB9BF548225E676B00E4E6F0 /* Keychain+StorageProvider.swift */,
 				CB9BF53D225E4C1B00E4E6F0 /* StorageProvider.swift */,
 				CB42653B226508DE0062C97A /* StorageProvider+Default.swift */,
 				CB9BF54A225E678400E4E6F0 /* UserDefaults+StorageProvider.swift */,
-				CB8F6FFA2265314D001B9E2E /* FileSystemStorageProvider.swift */,
 			);
 			path = Holocron;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				CB9BF53E225E4C1B00E4E6F0 /* StorageProvider.swift in Sources */,
 				CB9BF549225E676B00E4E6F0 /* Keychain+StorageProvider.swift in Sources */,
 				CB9BF54B225E678400E4E6F0 /* UserDefaults+StorageProvider.swift in Sources */,
+				CBCB75512270C34A00AF9C0F /* Key.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

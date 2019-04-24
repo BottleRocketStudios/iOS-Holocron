@@ -13,7 +13,7 @@ public extension StorageProvider {
     typealias FileSystem = FileSystemStorageProvider
 }
 
-public struct FileSystemStorageProvider<Key: RawRepresentable> where Key.RawValue == String {
+public struct FileSystemStorageProvider {
     let baseURL: URL
     let readTransformer: Transformer
     let writeTransformer: Transformer

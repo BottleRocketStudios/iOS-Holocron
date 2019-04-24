@@ -19,8 +19,8 @@ extension String: RawRepresentable {
     }
 }
 
-struct StorageProviderTester<Provider: StorageProvider> where Provider.Key == String {
-    let provider: Provider
+struct StorageProviderTester {
+    let provider: StorageProvider
     
     struct Stored: Codable, Equatable {
         let id: Int
@@ -100,26 +100,26 @@ struct StorageProviderTester<Provider: StorageProvider> where Provider.Key == St
 class MockStorageProvider: StorageProvider {
     private var storage = [String : Data]()
     
-    func deleteValue(for key: String) throws {
-        storage[key] = nil
+    func deleteValue(for key: Key) throws {
+        storage[key.rawValue] = nil
     }
     
-    func value<T: Decodable>(for key: String) throws -> T? {
-        guard let data = storage[key] else {
+    func value<T: Decodable>(for key: Key) throws -> T? {
+        guard let data = storage[key.rawValue] else {
             return nil
         }
         
         return try defaultDecoded(data)
     }
     
-    func write<T: Encodable>(_ value: T, for key: String) throws {
-        storage[key] = try defaultEncoded(value)
+    func write<T: Encodable>(_ value: T, for key: Key) throws {
+        storage[key.rawValue] = try defaultEncoded(value)
     }
 }
 
 class StorageProviderTests: XCTestCase {
     func test_defaults() throws {
-        try StorageProviderTester<UserDefaults>(provider: .UserDefaults()).runTests()
+        try StorageProviderTester(provider: .UserDefaults()).runTests()
     }
     
     func test_mock() throws {
@@ -127,11 +127,11 @@ class StorageProviderTests: XCTestCase {
     }
     
     func test_fileSystem() throws {
-        let provider = FileSystemStorageProvider<String>(baseURL: FileManager.default.temporaryDirectory)
+        let provider = FileSystemStorageProvider(baseURL: FileManager.default.temporaryDirectory)
         try StorageProviderTester(provider: provider).runTests()
     }
     
     func test_keychain() throws {
-        try StorageProviderTester<Keychain>(provider: .Keychain()).runTests()
+        try StorageProviderTester(provider: .Keychain()).runTests()
     }
 }
