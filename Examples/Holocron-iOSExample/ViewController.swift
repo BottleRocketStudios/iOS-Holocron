@@ -8,121 +8,135 @@
 import UIKit
 import Holocron
 
+extension Key {
+    static let fileTest: Key = "fileTestKey"
+    static let keychainTest: Key = "testKeychainKey"
+    static let userDefaultsTest: Key = "testUserDefaultsKey"
+}
+
 class ViewController: UIViewController {
-//
-//    let defaultsContainer = UserDefaults.standard
-//    let keychainContainer = KeychainContainer(serviceName: "com.holocron.example")
-//    let fileContainer = FileContainer(fileProtectionType: .complete)
-//
-//    let docsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-//    var fileStorageOptions: FileContainer.StorageOptions {
-//        return .init(url: docsDirectory.appendingPathComponent("test"))
-//    }
+
+    //let defaultsContainer = UserDefaults.standard
+    let defaultsProvider: StorageProvider = UserDefaults.standard
+    let keychainProvider: StorageProvider = .Keychain(service: "com.holocron.example")
+    let fileProvider = FileSystemStorageProvider(baseURL: FileManager.default.temporaryDirectory)
 
     @IBOutlet private var userDefaultsTextField: UITextField!
     @IBOutlet private var keychainTextField: UITextField!
     @IBOutlet private var fileTextField: UITextField!
-//
-//    struct Stored: Codable {
-//        let title: String
-//    }
-//
-//    // MARK: User Defaults
-//    @IBAction func userDefaultsReadTapped(_ sender: Any) {
-//        do {
-//            if let stored: Stored = try defaultsContainer.retrieve(with: "testUserDefaultsKey") {
-//                presentAlert(title: "User Defaults Read", message: stored.title)
-//            } else {
-//                presentAlert(title: "User Defaults Read", message: "No value.")
-//            }
-//        } catch {
-//            presentAlert(title: "User Defaults Read Error", message: error.localizedDescription)
-//        }
-//    }
-//
-//    @IBAction func userDefaultsWriteTapped(_ sender: Any) {
-//        guard let text = userDefaultsTextField.text, !text.isEmpty else { return }
-//        do {
-//            let stored = Stored(title: text)
-//            try defaultsContainer.store(stored, with: "testUserDefaultsKey")
-//            presentAlert(title: "User Defaults Write", message: "Did write \(stored.title).")
-//        } catch {
-//            presentAlert(title: "User Defaults Write Error", message: error.localizedDescription)
-//        }
-//    }
-//
-//    @IBAction func userDefaultsDeleteTapped(_ sender: Any) {
-//        defaultsContainer.removeElement(with: "testUserDefaultsKey")
-//        presentAlert(title: "User Defaults Delete", message: "Delete successful.")
-//    }
-//
-//    // MARK: Keychain
-//    @IBAction func keychainReadTapped(_ sender: Any) {
-//        do {
-//            if let stored: Stored = try keychainContainer.retrieve(with: "testKeychainKey") {
-//                presentAlert(title: "Keychain Read", message: stored.title)
-//            } else {
-//                presentAlert(title: "Keychain Read", message: "No value.")
-//            }
-//        } catch {
-//            presentAlert(title: "Keychain Read Error", message: error.localizedDescription)
-//        }
-//    }
-//
-//    @IBAction func keychainWriteTapped(_ sender: Any) {
-//        guard let text = keychainTextField.text, !text.isEmpty else { return }
-//        do {
-//            let stored = Stored(title: text)
-//            try keychainContainer.store(stored, with: "testKeychainKey")
-//            presentAlert(title: "Keychain Write", message: "Did write \(stored.title).")
-//        } catch {
-//            presentAlert(title: "Keychain Write Error", message: error.localizedDescription)
-//        }
-//    }
-//
-//    @IBAction func keychainDeleteTapped(_ sender: Any) {
-//        keychainContainer.removeElement(with: "testKeychainKey")
-//        presentAlert(title: "Keychain Delete", message: "Delete successful.")
-//    }
-//
-//    // MARK: File
-//    @IBAction func fileReadTapped(_ sender: Any) {
-//        do {
-//            if let stored: Stored = try fileContainer.retrieve(with: fileStorageOptions) {
-//                presentAlert(title: "File Read", message: stored.title)
-//            } else {
-//                presentAlert(title: "File Read", message: "No value.")
-//            }
-//        } catch {
-//            presentAlert(title: "File Read Error", message: error.localizedDescription)
-//        }
-//    }
-//
-//    @IBAction func fileWriteTapped(_ sender: Any) {
-//        guard let text = fileTextField.text, !text.isEmpty else { return }
-//        do {
-//            let stored = Stored(title: text)
-//            try fileContainer.store(stored, with: fileStorageOptions)
-//            presentAlert(title: "File Write", message: "Did write \(stored.title).")
-//        } catch {
-//            presentAlert(title: "File Write Error", message: error.localizedDescription)
-//        }
-//    }
-//
-//    @IBAction func fileDeleteTapped(_ sender: Any) {
-//        fileContainer.removeElement(with: fileStorageOptions)
-//        presentAlert(title: "File Delete", message: "Delete successful.")
-//    }
+
+    struct Stored: Codable {
+        let title: String
+    }
+
+    // MARK: User Defaults
+    @IBAction func userDefaultsReadTapped(_ sender: Any) {
+        do {
+            if let stored: Stored = try defaultsProvider.value(for: .userDefaultsTest) {
+                presentAlert(title: "User Defaults Read", message: stored.title)
+            } else {
+                presentAlert(title: "User Defaults Read", message: "No value.")
+            }
+        } catch {
+            presentAlert(title: "User Defaults Read Error", message: error.localizedDescription)
+        }
+    }
+
+    @IBAction func userDefaultsWriteTapped(_ sender: Any) {
+        guard let text = userDefaultsTextField.text, !text.isEmpty else { return }
+        do {
+            let stored = Stored(title: text)
+            try defaultsProvider.write(stored, for: .userDefaultsTest)
+            presentAlert(title: "User Defaults Write", message: "Did write \(stored.title).")
+        } catch {
+            presentAlert(title: "User Defaults Write Error", message: error.localizedDescription)
+        }
+    }
+
+    @IBAction func userDefaultsDeleteTapped(_ sender: Any) {
+        do {
+            try defaultsProvider.deleteValue(for: .userDefaultsTest)
+            presentAlert(title: "User Defaults Delete", message: "Delete successful.")
+        } catch {
+            presentAlert(title: "User Defaults Delete Error", message: error.localizedDescription)
+        }
+    }
+
+    // MARK: Keychain
+    @IBAction func keychainReadTapped(_ sender: Any) {
+        do {
+            if let stored: Stored = try keychainProvider.value(for: .keychainTest) {
+                presentAlert(title: "Keychain Read", message: stored.title)
+            } else {
+                presentAlert(title: "Keychain Read", message: "No value.")
+            }
+        } catch {
+            presentAlert(title: "Keychain Read Error", message: error.localizedDescription)
+        }
+    }
+
+    @IBAction func keychainWriteTapped(_ sender: Any) {
+        guard let text = keychainTextField.text, !text.isEmpty else { return }
+        do {
+            let stored = Stored(title: text)
+            try keychainProvider.write(stored, for: .keychainTest)
+            presentAlert(title: "Keychain Write", message: "Did write \(stored.title).")
+        } catch {
+            presentAlert(title: "Keychain Write Error", message: error.localizedDescription)
+        }
+    }
+
+    @IBAction func keychainDeleteTapped(_ sender: Any) {
+        do {
+            try keychainProvider.deleteValue(for: .keychainTest)
+            presentAlert(title: "Keychain Delete", message: "Delete successful.")
+        } catch {
+            presentAlert(title: "Keychain Delete Error", message: error.localizedDescription)
+        }
+    }
+
+    // MARK: File
+    @IBAction func fileReadTapped(_ sender: Any) {
+        do {
+            if let stored: Stored = try fileProvider.value(for: .fileTest) {
+                presentAlert(title: "File Read", message: stored.title)
+            } else {
+                presentAlert(title: "File Read", message: "No value.")
+            }
+        } catch {
+            presentAlert(title: "File Read Error", message: error.localizedDescription)
+        }
+    }
+
+    @IBAction func fileWriteTapped(_ sender: Any) {
+        guard let text = fileTextField.text, !text.isEmpty else { return }
+        do {
+            let stored = Stored(title: text)
+            try fileProvider.write(stored, for: .fileTest)
+            presentAlert(title: "File Write", message: "Did write \(stored.title).")
+        } catch {
+            presentAlert(title: "File Write Error", message: error.localizedDescription)
+        }
+    }
+
+    @IBAction func fileDeleteTapped(_ sender: Any) {
+        do {
+            try fileProvider.deleteValue(for: .fileTest)
+            presentAlert(title: "File Delete", message: "Delete successful.")
+        } catch {
+            presentAlert(title: "File Delete Error", message: error.localizedDescription)
+        }
+    }
 }
 
 //MARK: Alert Presentation
 extension ViewController {
-//    func presentAlert(title: String, message: String) {
-//        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-//
-//        let okAction = UIAlertAction(title: "OK", style: .default) { _ in }
-//        alert.addAction(okAction)
-//
-//        present(alert, animated: true, completion: nil)
-//    }
+    func presentAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in }
+        alert.addAction(okAction)
+
+        present(alert, animated: true, completion: nil)
+    }
 }
