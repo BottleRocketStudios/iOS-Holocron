@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     }
 
     // MARK: User Defaults
-    @IBAction func userDefaultsReadTapped(_ sender: Any) {
+    @IBAction func userDefaultsReadTapped() {
         do {
             if let stored: Stored = try defaultsProvider.value(for: .userDefaultsTest) {
                 presentAlert(title: "User Defaults Read", message: stored.title)
@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         }
     }
 
-    @IBAction func userDefaultsWriteTapped(_ sender: Any) {
+    @IBAction func userDefaultsWriteTapped() {
         guard let text = userDefaultsTextField.text, !text.isEmpty else { return }
         do {
             let stored = Stored(title: text)
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
         }
     }
 
-    @IBAction func userDefaultsDeleteTapped(_ sender: Any) {
+    @IBAction func userDefaultsDeleteTapped() {
         do {
             try defaultsProvider.deleteValue(for: .userDefaultsTest)
             presentAlert(title: "User Defaults Delete", message: "Delete successful.")
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
     }
 
     // MARK: Keychain
-    @IBAction func keychainReadTapped(_ sender: Any) {
+    @IBAction func keychainReadTapped() {
         do {
             if let stored: Stored = try keychainProvider.value(for: .keychainTest) {
                 presentAlert(title: "Keychain Read", message: stored.title)
@@ -73,7 +73,7 @@ class ViewController: UIViewController {
         }
     }
 
-    @IBAction func keychainWriteTapped(_ sender: Any) {
+    @IBAction func keychainWriteTapped() {
         guard let text = keychainTextField.text, !text.isEmpty else { return }
         do {
             let stored = Stored(title: text)
@@ -84,7 +84,7 @@ class ViewController: UIViewController {
         }
     }
 
-    @IBAction func keychainDeleteTapped(_ sender: Any) {
+    @IBAction func keychainDeleteTapped() {
         do {
             try keychainProvider.deleteValue(for: .keychainTest)
             presentAlert(title: "Keychain Delete", message: "Delete successful.")
@@ -94,7 +94,7 @@ class ViewController: UIViewController {
     }
 
     // MARK: File
-    @IBAction func fileReadTapped(_ sender: Any) {
+    @IBAction func fileReadTapped() {
         do {
             if let stored: Stored = try fileProvider.value(for: .fileTest) {
                 presentAlert(title: "File Read", message: stored.title)
@@ -106,7 +106,7 @@ class ViewController: UIViewController {
         }
     }
 
-    @IBAction func fileWriteTapped(_ sender: Any) {
+    @IBAction func fileWriteTapped() {
         guard let text = fileTextField.text, !text.isEmpty else { return }
         do {
             let stored = Stored(title: text)
@@ -117,7 +117,7 @@ class ViewController: UIViewController {
         }
     }
 
-    @IBAction func fileDeleteTapped(_ sender: Any) {
+    @IBAction func fileDeleteTapped() {
         do {
             try fileProvider.deleteValue(for: .fileTest)
             presentAlert(title: "File Delete", message: "Delete successful.")
