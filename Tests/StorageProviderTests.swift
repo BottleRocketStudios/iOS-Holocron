@@ -19,10 +19,6 @@ struct StorageProviderTester {
     struct Stored: Codable, Equatable {
         let id: Int
         let title: String
-        
-        static func ==(lhs: Stored, rhs: Stored) -> Bool {
-            return lhs.id == rhs.id && lhs.title == rhs.title
-        }
     }
     
     func runTests() throws {

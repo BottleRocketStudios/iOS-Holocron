@@ -8,20 +8,22 @@
 
 import Foundation
 
-// MARK: Base Struct
 public extension StorageProvider {
     typealias FileSystem = FileSystemStorageProvider
 }
 
+// MARK: Base Struct
 public struct FileSystemStorageProvider {
     public typealias Transformer = (Data) -> Data
     
     let baseURL: URL
+    let fileManager: FileManager
     let readTransformer: Transformer
     let writeTransformer: Transformer
     
-    public init(baseURL: URL, readTransformer: @escaping Transformer = { $0 }, writeTransformer: @escaping Transformer = { $0 }) {
+    public init(baseURL: URL, fileManager: FileManager = Foundation.FileManager.default, readTransformer: @escaping Transformer = { $0 }, writeTransformer: @escaping Transformer = { $0 }) {
         self.baseURL = baseURL
+        self.fileManager = fileManager
         self.readTransformer = readTransformer
         self.writeTransformer = writeTransformer
     }
@@ -31,32 +33,36 @@ public struct FileSystemStorageProvider {
     }
 }
 
-// MARK: Public API
-extension FileSystemStorageProvider {
-    /// Writes a value for a specific key.
-    /// - parameter value: The value to store.
-    /// - parameter key: The key to associate with `value`.
-    /// - parameter options: The options to use when writing the file.
-    public func write<T: Encodable>(_ value: T, for key: Key, options: Data.WritingOptions) throws {
-        try writeTransformer(defaultEncoded(value)).write(to: url(for: key), options: options)
-    }
-}
-
 // MARK: StorageProvider
 extension FileSystemStorageProvider: StorageProvider {
     public func deleteValue(for key: Key) throws {
-        try FileManager.default.removeItem(at: url(for: key))
+        try fileManager.removeItem(at: url(for: key))
     }
     
     public func value<T: Decodable>(for key: Key) throws -> T? {
-        guard let data = FileManager.default.contents(atPath: url(for: key).path) else {
+        guard let data = fileManager.contents(atPath: url(for: key).path) else {
             return nil
         }
         
         return try defaultDecoded(readTransformer(data))
     }
     
+    /// Writes a value for a specific key.
+    /// - parameter value: The value to store.
+    /// - parameter key: The key to associate with `value`.
     public func write<T: Encodable>(_ value: T, for key: Key) throws {
-        try write(value, for: key, options: [])
+        let data = try writeTransformer(defaultEncoded(value))
+        let didSaveFile = fileManager.createFile(atPath: url(for: key).path, contents: data, attributes: nil)
+        
+        if !didSaveFile {
+            throw Error.fileWriteFailed
+        }
+    }
+}
+
+// MARK: Error
+public extension FileSystemStorageProvider {
+    enum Error: Swift.Error {
+        case fileWriteFailed
     }
 }
