@@ -108,6 +108,23 @@ class MockStorageProvider: StorageProvider {
     }
 }
 
+class MockFileManager: Holocron.FileManager {
+    private var storage = [String : Data]()
+    
+    func contents(atPath path: String) -> Data? {
+        return storage[path]
+    }
+    
+    func createFile(atPath path: String, contents data: Data?, attributes attr: [FileAttributeKey : Any]?) -> Bool {
+        storage[path] = data
+        return true
+    }
+    
+    func removeItem(at url: URL) throws {
+        storage[url.path] = nil
+    }
+}
+
 // MARK: StorageProviderTests
 /// Runs tests using `StorageProviderTester` with all the storage providers that are available.
 class StorageProviderTests: XCTestCase {
@@ -120,7 +137,7 @@ class StorageProviderTests: XCTestCase {
     }
     
     func test_fileSystem() throws {
-        let provider = FileSystemStorageProvider(baseURL: FileManager.default.temporaryDirectory)
+        let provider = FileSystemStorageProvider(baseURL: FileManager.default.temporaryDirectory, fileManager: MockFileManager())
         try StorageProviderTester(provider: provider).runTests()
     }
     

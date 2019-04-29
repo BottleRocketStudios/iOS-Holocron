@@ -47,9 +47,6 @@ extension FileSystemStorageProvider: StorageProvider {
         return try defaultDecoded(readTransformer(data))
     }
     
-    /// Writes a value for a specific key.
-    /// - parameter value: The value to store.
-    /// - parameter key: The key to associate with `value`.
     public func write<T: Encodable>(_ value: T, for key: Key) throws {
         let data = try writeTransformer(defaultEncoded(value))
         let didSaveFile = fileManager.createFile(atPath: url(for: key).path, contents: data, attributes: nil)
