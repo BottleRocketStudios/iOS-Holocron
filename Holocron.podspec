@@ -26,8 +26,8 @@ s.license          = { :type => 'Apache', :file => 'LICENSE' }
 s.author           = { 'Bottle Rocket Studios' => 'will.mcginty@bottlerocketstudios.com' }
 s.source           = { :git => 'https://github.com/bottlerocketstudios/iOS-Holocron.git', :tag => s.version.to_s }
 
+s.swift_version = '5.0'
 s.ios.deployment_target = '8.0'
 s.source_files = 'Sources/Holocron/**/*'
-s.dependency 'Result'
 s.dependency 'KeychainAccess'
 end
