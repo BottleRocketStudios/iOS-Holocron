@@ -3,7 +3,7 @@
 //  Holocron-iOS
 //
 //  Created by Will McGinty on 3/19/18.
-//  Copyright © 2018 CocoaPods. All rights reserved.
+//  Copyright © 2018 Bottle Rocket Studios. All rights reserved.
 //
 
 import Foundation
