@@ -12,7 +12,7 @@ let package = Package(
     products: [
         .library(
             name: "Holocron",
-            targets: ["Holocron"])
+            targets: ["Holocron-iOS"])
     ],
     dependencies: [
         .package(url: "https://github.com/kishikawakatsumi/KeychainAccess.git", from: "4.2.1")
